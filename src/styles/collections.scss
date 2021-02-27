@@ -1,0 +1,42 @@
+/* COLLECTION */ 
+.collection {
+
+    .collection-item {
+        display: block;
+        li {
+            margin-top: $len-x2;
+        }
+        img {
+            width: 150px;
+        }
+        @media (min-width: 768px) {
+            display: flex;
+        }
+    }
+
+    div {
+        width: 49%;
+        display: inline-block;
+        @media (min-width: 768px) {
+            width: 33%;
+        }
+    }
+
+    .item-image {
+        text-align: left;
+        img {
+            width: 80px;
+        }
+    }
+
+    .item-cta {
+        width: 100%;
+        @media (min-width: 768px) {
+            width: 33%;
+        }
+        button {
+            width: 100%;
+            margin: $len-x1;
+        }
+    }
+}

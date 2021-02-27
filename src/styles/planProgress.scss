@@ -1,0 +1,33 @@
+@import './variables.scss';
+
+// Plan Progress Widget
+.plan-progress {
+    background-color: $base-color;
+    bottom: 0;
+    color: $white-color;
+    padding: $len-x2 0;
+    position: sticky;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 0 $len-x4 $shadow-color;
+
+    ul {
+        margin-top: $len-half;
+        li {
+            margin-bottom: $len-x2; 
+        }
+    }
+
+    span {
+        max-width: 50%;
+    }
+
+    a {
+        color: $white-color;
+    }
+
+}
+
+.plan-progress--completed {
+    background-color: $highlight-color;
+}
