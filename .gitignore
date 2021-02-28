@@ -105,3 +105,8 @@ tsconfig.json
 react-app-env.d.ts
 # TernJS port file
 .tern-port
+
+package-lock.json
+.DS_Store
+
+build

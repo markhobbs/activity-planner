@@ -1,0 +1,223 @@
+[
+    {   "id": 1,
+        "img": "/static/media/plank.6b4eb707.jpg", 
+        "title": "Plank", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {   "id": 2,
+        "img": "/static/media/pushup.5cdeb11c.jpg", 
+        "title": "Push-Ups", 
+        "headline": "The push-up is the ultimate bodyweight exercise that utilizes literally every major muscle.", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders",
+        "rewards": [
+            ["CORE", 200],
+            ["LEGS", 100]
+        ], 
+        "kit": [
+            { "aparatus": "Ball" },
+            { "aparatus": "Towel" }
+        ],
+        "featured": true
+    },
+    {   "id": 3,
+        "img": "/static/media/squat.f80c35dc.jpg", 
+        "title": "Squats", 
+        "headline": "Squats will help you build your quads, hams and calves, while also strengthening your whole core and enhancing greater overall fat burning.", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders",
+        "rewards": [
+            ["CORE", 200],
+            ["LEGS", 100]
+        ], 
+        "kit": [
+            { "aparatus": "Ball" },
+            { "aparatus": "Towel" }
+        ],
+        "featured": true
+    },
+    {   "id": 4,
+        "img": "/static/media/plank.6b4eb707.jpg", 
+        "title": "Bird-Dog", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {   
+        "id": 5,
+        "img": "/static/media/pushup.5cdeb11c.jpg", 
+        "title": "Lying hip raises", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {  
+        "id": 6,
+        "img": "/static/media/plank.6b4eb707.jpg", 
+        "title": "Burpees", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {   
+        "id": 7,
+        "img": "/static/media/squat.f80c35dc.jpg",  
+        "title": "Cervical Extensor Excercise", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {   "id": 8,
+        "img": "/static/media/plank.6b4eb707.jpg", 
+        "title": "W-Y Arm Slide", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {   
+        "id": 9,
+        "img": "/static/media/plank.6b4eb707.jpg", 
+        "title": "Strengthening Side Bending", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {   
+        "id": 10,
+        "img": "/static/media/squat.f80c35dc.jpg", 
+        "title": "Swiss Ball Arms Raise", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {           
+        "id": 11,
+        "img": "/static/media/plank.6b4eb707.jpg", 
+        "title": "Punching", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {           
+        "id": 12,
+        "img": "/static/media/pushup.5cdeb11c.jpg", 
+        "title": "Trunk rotation stabilisation", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {           
+        "id": 13,
+        "img": "/static/media/plank.6b4eb707.jpg", 
+        "title": "Bent Over Row", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {           
+        "id": 14,
+        "img": "/static/media/plank.6b4eb707.jpg", 
+        "title": "Wall Push-Up", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {           
+        "id": 15,
+        "img": "/static/media/pushup.5cdeb11c.jpg", 
+        "title": "Squat Arms Overhead", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {           
+        "id": 16,
+        "img": "/static/media/squat.f80c35dc.jpg", 
+        "title": "Plank Extreme", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {           
+        "id": 17,
+        "img": "/static/media/pushup.5cdeb11c.jpg", 
+        "title": "Plank", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {           
+        "id": 18,
+        "img": "/static/media/squat.f80c35dc.jpg", 
+        "title": "Plank", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {           
+        "id": 19,
+        "img": "/static/media/plank.6b4eb707.jpg", 
+        "title": "Plank", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {           
+        "id": 20,
+        "img": "/static/media/plank.6b4eb707.jpg", 
+        "title": "Plank", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    },
+    {           
+        "id": 21,
+        "img": "/static/media/pushup.5cdeb11c.jpg", 
+        "title": "Plank", 
+        "headline": "The plank is one of the greatest and most underrated exercises ever", 
+        "desc": "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
+        "rep": 5, 
+        "meta": "Core Abs Shoulders", 
+        "featured": true
+    }
+]

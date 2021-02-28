@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Header from './components/Header';
 import About from './pages/About';
 import Activity from './pages/Activity';
+import Activity2 from './pages/Activity2';
 import Plan from './pages/Plan';
 import Store from './pages/Store';
 //import Scorecard from './pages/Scorecard';
@@ -23,6 +24,7 @@ class App extends Component {
                 <Route path="/about" component={About}/>
                 {/*<Route exact path="/" component={Activity}/>*/}
                 <Route exact path="/" component={Activity}/>
+                <Route path="/paged" component={Activity2}/>
                 <Route path="/index_react.html" component={Activity}/>
                 <Route path="/plan" component={Plan}/>
                 <Route path="/store" component={Store}/>
