@@ -1,0 +1,13 @@
+@import './variables.scss';
+.toggle {
+    border-radius : $len-x2;
+    color: $white-color;
+    padding: $len-x2 $len-x3;
+    margin: $len-x1
+}
+.toggle__on {
+    background-color: $highlight-color;
+}
+.toggle__off {
+    background-color: $base-color
+}

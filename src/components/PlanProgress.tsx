@@ -21,6 +21,7 @@ class PlanProgress extends Component<IPlanProgressProps> {
                         <Link to="/"> .::{process.env.REACT_APP_ACTIVATIES_HEADING}::. </Link>
                         <Link to="/plan"> .::{process.env.REACT_APP_PLAN_HEADING}::. </Link>
                         <Link to="/awards_history"> .::{process.env.REACT_APP_HISTORY_HEADING}::. </Link>
+                        {/*<Link to="/paged"> .:: Paged ::. </Link>*/}
                     </span>
                     <h5>
                         { this.props.addedItems.length }

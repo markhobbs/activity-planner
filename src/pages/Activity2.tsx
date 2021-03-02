@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Pagination from '../components/Pagination';
 import Post from '../components/Post';
+import Link from '../components/Link';
+import Toggle from '../components/Toggle';
+import Switch from '../components/Switch';
 
 const url = '/static/posts.json';
 
 export default function App() {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState("");
+
+  const goToNextPage = () => {
+    console.log("changed");
+  }
   
   useEffect(() => {
     fetch(url)
@@ -21,21 +28,33 @@ export default function App() {
   if (error) return <h1>{error}</h1>;
 
   return (
-    <div>
+    <div className="container">
+
+      <Toggle 
+        onChange={ goToNextPage } 
+        data-testid="toggle" />
+
+      <Switch 
+        onChange={ goToNextPage } 
+        data-testid="switch" />
+
+      <Link page="/plan" children="View Planner" />
+      
       {posts.length > 0 ? (
         <>
           <Pagination
             data={posts}
             RenderComponent={Post}
             title="Posts"
-            //pageLimit={5}
-            //dataLimit={10}
-            pageLimit={4}
-            dataLimit={6}
+            pageLimit={5}
+            dataLimit={10}
           />
         </>
       ) : (
-       <h1>No Posts to display</h1>
+       
+        // Loadng 
+        <h1>No Posts to display</h1>
+
       )}
     </div>
   );
