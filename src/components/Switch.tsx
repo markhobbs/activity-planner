@@ -29,9 +29,7 @@ export default function Switch(props : any) {
     return (
     <label 
       data-testid="switcher"
-      className={
-        state === true ? "switcher switch__off" : "switcher switch__on"
-      }>
+      className={ state === true ? "switcher switch__off" : "switcher switch__on" }>
       <input 
         type = "checkbox" 
         onClick={() => {
@@ -39,7 +37,8 @@ export default function Switch(props : any) {
           props.onChange(!state);
         }}
       />
-      {state === true ? "OFF" : "ON"}
+      {props.label} 
+      {/*state === true ? "OFF" : "ON"*/}
       <span className="slider round" />
     </label>
     );

@@ -1,7 +1,7 @@
 @import './variables.scss';
-
 // Plan Progress Widget
 .plan-progress {
+    display: none;
     background-color: $base-color;
     bottom: 0;
     color: $white-color;
@@ -25,9 +25,13 @@
     a {
         color: $white-color;
     }
+}
 
+.plan-progress--active {
+    display: block;
 }
 
 .plan-progress--completed {
     background-color: $highlight-color;
 }
+

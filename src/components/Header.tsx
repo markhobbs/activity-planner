@@ -7,16 +7,13 @@ const Header = () => {
     return(
         <header className="header">
             <div className="container">
-                
                 <Link to="/" className="logo">
                     <OpacityIcon /><span>{ process.env.REACT_APP_TITLE }</span>
                 </Link>
-
                 <Link to="/plan" className="right">
                     <Basket />
                 </Link>
-
-            </div>
+                </div>
         </header>
     )
 }

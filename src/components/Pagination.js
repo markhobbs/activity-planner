@@ -31,15 +31,7 @@ function Pagination({ data, RenderComponent, title, pageLimit, dataLimit }) {
   
     return (
       <div>
-          <h2>{title}</h2>
-          
-          {/* show the posts, 10 posts at a time */}
-          <div className="dataContainer">
-            {getPaginatedData().map((d, idx) => (
-              <RenderComponent key={idx} data={d} />
-            ))}
-          </div>
-      
+          {/*<h1>{title}</h1>*/}
           {/* show the pagiantion
               it consists of next and previous buttons
               along with page numbers, in our case, 5 page
@@ -55,6 +47,13 @@ function Pagination({ data, RenderComponent, title, pageLimit, dataLimit }) {
             ))}
             {/* next button */}
             <button onClick={goToNextPage} className={`next ${currentPage === pages ? 'disabled' : ''}`}>next</button>
+          </div>
+
+          {/* show the posts, 10 posts at a time */}
+          <div className="dataContainer">
+            {getPaginatedData().map((d, idx) => (
+              <RenderComponent key={idx} data={d} />
+            ))}
           </div>
 
         </div>
