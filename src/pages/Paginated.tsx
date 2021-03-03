@@ -29,17 +29,6 @@ export default function App() {
 
   return (
     <div className="container">
-
-      <Toggle 
-        onChange={ goToNextPage } 
-        data-testid="toggle" />
-
-      <Switch 
-        onChange={ goToNextPage } 
-        data-testid="switch" />
-
-      <Link page="/plan" children="View Planner" />
-      
       {posts.length > 0 ? (
         <>
           <Pagination
@@ -49,12 +38,19 @@ export default function App() {
             pageLimit={5}
             dataLimit={10}
           />
+          <Toggle 
+            onChange={ goToNextPage } 
+            data-testid="toggle" />
+          <Switch 
+            onChange={ goToNextPage } 
+            data-testid="switch" />
+          <Link 
+            page="/plan" 
+            children="View Planner" />
         </>
       ) : (
-       
         // Loadng 
         <h1>No Posts to display</h1>
-
       )}
     </div>
   );

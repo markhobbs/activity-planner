@@ -4,13 +4,13 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Header from './components/Header';
 import About from './pages/About';
 import Activity from './pages/Activity';
-import Activity2 from './pages/Activity2';
+import Paginated from './pages/Paginated';
 import Plan from './pages/Plan';
 import Store from './pages/Store';
-//import Scorecard from './pages/Scorecard';
-import History from './pages/History';
+import Awards from './pages/Awards';
 import Footer from './components/Footer';
 import PlanProgress from './components/PlanProgress';
+import Menu from './components/Menu';
 
 class App extends Component {
   render() {
@@ -19,19 +19,16 @@ class App extends Component {
         <React.StrictMode>
           <div className="App">
             <Header/>
-            <main className="main-wrapper">
+            <Menu />
               <Switch>
                 <Route path="/about" component={About}/>
-                {/*<Route exact path="/" component={Activity}/>*/}
                 <Route exact path="/" component={Activity}/>
-                <Route path="/paged" component={Activity2}/>
+                <Route path="/paginated" component={Paginated}/>
                 <Route path="/index_react.html" component={Activity}/>
                 <Route path="/plan" component={Plan}/>
                 <Route path="/store" component={Store}/>
-                <Route path="/awards_history" component={History}/>
-                {/*<Route path="/awards_scorecard" component={Scorecard}/>*/}
+                <Route path="/awards" component={Awards}/>
               </Switch>
-            </main>
             <PlanProgress />
             <Footer />
           </div>

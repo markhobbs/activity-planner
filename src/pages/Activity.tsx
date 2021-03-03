@@ -21,7 +21,6 @@ class Activity extends Component<IActivityProps>  {
 
         return(
             <div className="container">
-                {/*<section>:: <Link title="planner" to="/plan"><em>Planner</em></Link></section>*/}
                 <PageHeader heading = { process.env.REACT_APP_ACTIVATIES_HEADING } />
                 <ul className="box">
                     {cardItems}

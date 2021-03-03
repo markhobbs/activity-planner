@@ -13,12 +13,12 @@ import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
     History Page Class 
 */
 
-interface IHistoryProps {
+interface IAwardsProps {
     reset?: any;
     score?: any;
 }
 
-class History extends Component<IHistoryProps> {
+class Awards extends Component<IAwardsProps> {
 
     componentDidMount() {
         window.scrollTo(0, 0)
@@ -112,15 +112,15 @@ class History extends Component<IHistoryProps> {
         });
         return(
             <div className="container">
-                <PageHeader heading = {process.env.REACT_APP_HISTORY_HEADING} />
-                <p>{process.env.REACT_APP_HISTORY_SUMMARY}</p>
+                <PageHeader heading = {process.env.REACT_APP_AWARDS_HEADING} />
+                <p>{process.env.REACT_APP_AWARDS_SUMMARY}</p>
                 { scores.length ? 
                 <ul className="score-list">
                     {scores}
                 </ul> 
                 : 
                 <ul className="collection center">
-                    <li className="collection-item">{process.env.REACT_APP_EMPTY_HISTORY}</li>
+                    <li className="collection-item">{process.env.REACT_APP_EMPTY_AWARDS}</li>
                 </ul> 
                 }
             </div>
@@ -145,7 +145,7 @@ const mapDispatchToProps= (dispatch: any) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(History);
+export default connect(mapStateToProps, mapDispatchToProps)(Awards);
 
 
 

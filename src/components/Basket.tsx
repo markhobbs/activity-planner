@@ -22,7 +22,7 @@ const StyledBadge = withStyles((theme) => ({
 class Basket extends Component<IBasketProps>{
     render() { 
         return(  
-            <IconButton aria-label="plan" style={{ padding: "0", color: "white" }}>
+            <IconButton aria-label="plan" style={{ display: 'none', padding: "0", color: "white" }}>
                 <StyledBadge badgeContent={this.props.items.length} color="secondary">
                     <DirectionsRunIcon  />
                 </StyledBadge>

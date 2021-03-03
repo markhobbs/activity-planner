@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 interface IPlanProgressProps {
     total?: any;
@@ -11,18 +10,15 @@ interface IPlanProgressProps {
 class PlanProgress extends Component<IPlanProgressProps> { 
     render() {
         let percentage = parseInt(this.props.totalCompleted)/parseInt(this.props.total)*100;
-        let modifier = percentage === 100 ? 'plan-progress plan-progress--completed' : 'plan-progress';
+        let mod1 = (percentage >= 0) ? 'plan-progress--active' : '';
+        let mod2 = (percentage === 100) ? 'plan-progress--completed' : '';
+        let modifier = 'plan-progress ' + mod1 + ' ' + mod2;
+
         let isPercentageNan = isNaN(percentage) ? true: false;
         return (
             <section className={modifier}>
             { isPercentageNan || 
                 <div className="container">
-                    <span className="right">
-                        <Link to="/"> .::{process.env.REACT_APP_ACTIVATIES_HEADING}::. </Link>
-                        <Link to="/plan"> .::{process.env.REACT_APP_PLAN_HEADING}::. </Link>
-                        <Link to="/awards_history"> .::{process.env.REACT_APP_HISTORY_HEADING}::. </Link>
-                        {/*<Link to="/paged"> .:: Paged ::. </Link>*/}
-                    </span>
                     <h5>
                         { this.props.addedItems.length }
                         <sup> activity(s)</sup> { this.props.total } <sup> rep(s) </sup>
