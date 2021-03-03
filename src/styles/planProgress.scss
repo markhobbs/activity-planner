@@ -6,7 +6,9 @@
     bottom: 0;
     color: $white-color;
     padding: $len-x2 0;
-    position: sticky;
+    //position: sticky;
+    position: fixed;
+
     width: 100%;
     z-index: 1;
     box-shadow: 0 0 $len-x4 $shadow-color;
