@@ -36,9 +36,15 @@ class Plan extends React.Component<IPlanProps> {
     //to add the quantity
     handleAddQuantity = (id : number) => this.props.addPlanQuantity(id);
     //to substruct from the quantity
-    handleSubtractQuantity = (id : number) => {
-        this.props.subtractPlanQuantity(id);
-    }
+    handleSubtractQuantity = (id : number) => { this.props.subtractPlanQuantity(id) }
+
+    reset = () => {
+        if (!window.confirm('Are you sure?')){
+            return false;
+        } else {
+            return true;
+        }
+    };
 
     render() { 
         let addedItems = this.props.items.length ? (this.props.items.map((item: any)=> {
@@ -99,8 +105,7 @@ class Plan extends React.Component<IPlanProps> {
                 <ul className="collection center"> 
                     { addedItems } 
                 </ul>
-                <a href="/"><RotateLeftIcon /></a>
-                {/*<RotateLeftIcon onClick={ () => this.reset() }/>*/}
+                <a className="right" href="/" onClick={ () => this.reset() }>RESET <RotateLeftIcon /></a>
             </div>
         )}
 }

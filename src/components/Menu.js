@@ -50,9 +50,8 @@ const MenuItems = ({ open }) => {
       <Link to="/">Activitys</Link>
       <Link to="/plan">Planner</Link>
       <Link to="/awards">Awards</Link>
-      <p>Or</p>
-      <Link to="/about"><small>About</small></Link>
-      <Link to="/paginated"><small>Paginated</small></Link>
+      <hr />
+      <p><Link to="/about"><small>About</small></Link> :: <Link to="/paginated"><small>Paginated</small></Link></p>
       {/*<a href="/"><span role="img" aria-label="about us">Activitys</span>Activitys</a>
       <a href="/plan"><span role="img" aria-label="price">Planner</span>Planner</a>
       <a href="/awards"><span role="img" aria-label="contact">Achievements</span>Awards</a>*/}
