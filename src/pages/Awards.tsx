@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 /* Redux and Reducers */
 import { connect } from 'react-redux';
-import { addPlanItem, reset } from '../redux/actions/planActions';
+import { addPlanItem} from '../redux/actions/planActions';
 /* Componenets  */
 import PageHeader from '../components/PageHeader';
 import ColorChoice from '../components/ColorChoice';
@@ -15,7 +15,6 @@ import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
 */
 
 interface IAwardsProps {
-    reset: any;
     score: number[];
 }
 
@@ -23,11 +22,6 @@ class Awards extends Component<IAwardsProps> {
 
     componentDidMount() {
         window.scrollTo(0, 0)
-    }
-
-    reset = () => {
-        console.log('Are you sure?');
-        this.props.reset(); 
     }
 
     render() {
@@ -122,7 +116,7 @@ class Awards extends Component<IAwardsProps> {
                 : 
                 <ul className="collection center">
                     <li className="collection-item">
-                        <p>{process.env.REACT_APP_EMPTY_AWARDS}. Return to <Link to="/">{process.env.REACT_APP_PLAN_HEADING}</Link> Page</p>
+                        <p>{process.env.REACT_APP_EMPTY_AWARDS}. Return to <Link to="/plan">{process.env.REACT_APP_PLAN_HEADING}</Link> Page</p>
                     </li>
                 </ul> 
                 }
@@ -141,9 +135,6 @@ const mapDispatchToProps= (dispatch: any) => {
     return {
         addPlanItem: (id : number) => { 
             dispatch(addPlanItem(id)) ;
-        },
-        reset: () => { 
-            dispatch( reset() );
         }
     }
 }

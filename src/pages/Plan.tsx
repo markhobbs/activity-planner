@@ -19,24 +19,20 @@ import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
 interface IPlanProps {
-    removePlanItem: any
-    completePlanItem: any;
-    subtractPlanQuantity: any;
-    addPlanQuantity: any;
     items: string[];
+    removePlanItem: (id: number) => void;
+    completePlanItem: (id: number) => void;
+    subtractPlanQuantity: (id: number) => void;
+    addPlanQuantity: (id: number) => void;    
 }
 
 /* Planner Page Class */
 class Plan extends React.Component<IPlanProps> {
-    /* componentDidMount() { window.scrollTo(0, 0) } */
-    //to remove the item completely
-    handleRemove = (id : number) => this.props.removePlanItem(id);
-    //progress to completion
-    handleComplete = (id : number) =>  this.props.completePlanItem(id);
-    //to add the quantity
-    handleAddQuantity = (id : number) => this.props.addPlanQuantity(id);
-    //to substruct from the quantity
-    handleSubtractQuantity = (id : number) => { this.props.subtractPlanQuantity(id) }
+
+    handleRemove = (id : number) => this.props.removePlanItem(id); //to remove the item completely
+    handleComplete = (id : number) =>  this.props.completePlanItem(id); //progress to completion
+    handleAddQuantity = (id : number) => this.props.addPlanQuantity(id); //to add the quantity
+    handleSubtractQuantity = (id : number) => { this.props.subtractPlanQuantity(id) } //to substruct from the quantity
 
     reset = () => {
         if (!window.confirm('Are you sure?')){

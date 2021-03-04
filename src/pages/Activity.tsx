@@ -6,16 +6,15 @@ import Card from '../components/Card';
 import PageHeader from '../components/PageHeader';
 
 interface IActivityProps {
-    ikey?: number;
-    items?: any;
-    reset?: any;
+    ikey: number;
+    items: string[];
 }
 
 /* Activity Page Class */
 class Activity extends Component<IActivityProps>  {
     render() {
         // Loop through each activity item
-        let cardItems = this.props.items.map( (item: any[], ikey: number)  => {
+        let cardItems = this.props.items.map( (item, ikey)  => {
             return ( <Card key={ikey} item={item} /> )
         });
 
