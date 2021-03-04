@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 interface IPlanProgressProps {
-    total?: any;
-    totalCompleted?: any;
-    addedItems?: any;
+    total: string;
+    totalCompleted: string;
+    addedItems: string[];
 }
 
 class PlanProgress extends Component<IPlanProgressProps> { 

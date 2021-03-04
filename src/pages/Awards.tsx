@@ -5,6 +5,7 @@ import { addPlanItem, reset } from '../redux/actions/planActions';
 /* Componenets  */
 import PageHeader from '../components/PageHeader';
 import ColorChoice from '../components/ColorChoice';
+import { Link } from 'react-router-dom';
 
 /* Material UI  */
 import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
@@ -14,8 +15,8 @@ import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
 */
 
 interface IAwardsProps {
-    reset?: any;
-    score?: any;
+    reset: any;
+    score: number[];
 }
 
 class Awards extends Component<IAwardsProps> {
@@ -120,7 +121,9 @@ class Awards extends Component<IAwardsProps> {
                 </ul> 
                 : 
                 <ul className="collection center">
-                    <li className="collection-item">{process.env.REACT_APP_EMPTY_AWARDS}</li>
+                    <li className="collection-item">
+                        <p>{process.env.REACT_APP_EMPTY_AWARDS}. Return to <Link to="/">{process.env.REACT_APP_PLAN_HEADING}</Link> Page</p>
+                    </li>
                 </ul> 
                 }
             </div>

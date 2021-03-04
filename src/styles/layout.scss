@@ -17,9 +17,12 @@ body {
 
 h1 {
     font-size: 2em;
+    text-align: center;
+    margin : $len-x4 0;
     @media (min-width: 768px) {
         font-size: 3em;
         margin : $len-x5 0;
+        text-align: left;
     }
 }
 

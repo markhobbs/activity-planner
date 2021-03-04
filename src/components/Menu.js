@@ -16,9 +16,11 @@ const StyledMenu = styled.nav`
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
+  width: 50%;
 
   @media (max-width: 576px) {
-      width: 100%;
+      //width: 100%;
+      width: 80%;
   }
 
   a {
@@ -115,7 +117,7 @@ const Menu = () => {
   const [open, setOpen] = React.useState(false);
   const node = React.useRef();
   return (
-    <div>
+    <div data-testid="menu">
       <div>
         {/*<h1>Menu</h1>
         <img src="https://image.flaticon.com/icons/svg/2016/2016012.svg" alt="burger icon" />

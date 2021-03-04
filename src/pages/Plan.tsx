@@ -1,7 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 /* Redux and Reducers */
 import { connect } from 'react-redux';
-import { removePlanItem, completePlanItem, addPlanQuantity, subtractPlanQuantity, reset} from '../redux/actions/planActions';
+import { 
+    removePlanItem, 
+    completePlanItem, 
+    addPlanQuantity, 
+    subtractPlanQuantity } 
+    from '../redux/actions/planActions';
 /* Components*/
 import PageHeader from '../components/PageHeader';
 // Material UI Icons
@@ -13,53 +19,29 @@ import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
 interface IPlanProps {
-    reset?: any;
-    removePlanItem?: any
-    completePlanItem?: any;
-    subtractPlanQuantity?: any;
-    addPlanQuantity?: any;
-    items?: any;
-    //score?: any;
+    removePlanItem: any
+    completePlanItem: any;
+    subtractPlanQuantity: any;
+    addPlanQuantity: any;
+    items: string[];
 }
 
-/* 
-    Plan Page Class 
-*/
-class Plan extends Component<IPlanProps> {
-
-    componentDidMount() {
-        window.scrollTo(0, 0)
-    }
-
-    reset = () => {
-        console.log('Are you sure?');
-        this.props.reset(); 
-    }
-
+/* Planner Page Class */
+class Plan extends React.Component<IPlanProps> {
+    /* componentDidMount() { window.scrollTo(0, 0) } */
     //to remove the item completely
-    handleRemove = (id : number) => {
-        this.props.removePlanItem(id);
-    }
-
+    handleRemove = (id : number) => this.props.removePlanItem(id);
     //progress to completion
-    handleComplete = (id : number) =>  {
-        this.props.completePlanItem(id);
-    };
-
+    handleComplete = (id : number) =>  this.props.completePlanItem(id);
     //to add the quantity
-    handleAddQuantity = (id : number)=>{
-        this.props.addPlanQuantity(id);
-    }
-
+    handleAddQuantity = (id : number) => this.props.addPlanQuantity(id);
     //to substruct from the quantity
     handleSubtractQuantity = (id : number) => {
         this.props.subtractPlanQuantity(id);
     }
 
     render() { 
-
-        let addedItems = this.props.items.length ? (this.props.items.map((item : any) => {
-            
+        let addedItems = this.props.items.length ? (this.props.items.map((item: any)=> {
             return (
                 <li className="collection-item" key={item.id}>
                     <div className="item-image">
@@ -69,19 +51,6 @@ class Plan extends Component<IPlanProps> {
 
                     <div className="item-quantity">
                         <p>{item.rep} <sup>rep(s)</sup> {item.quantity} <sup>set(s)</sup></p>
-                        {/*}<Link to="/plan">
-                            <RemoveCircleOutlineIcon onClick = { () => {
-                                this.handleSubtractQuantity(item.id)
-                            }}
-                        />
-                        </Link>
-                        <Link to="/plan">
-                            <AddCircleOutlineIcon 
-                                onClick = { () => {
-                                    this.handleAddQuantity(item.id)
-                            }} 
-                        />
-                        </Link>*/}
                         <Button 
                             disabled={item.completed} 
                             startIcon={<RemoveCircleOutlineIcon />} 
@@ -118,9 +87,10 @@ class Plan extends Component<IPlanProps> {
                     </div>
                 </li>)
             })
-
         ):(
-            <li className="collection-item">{process.env.REACT_APP_EMPTY_ACTIVITY}</li>
+            <li className="collection-item">
+                <p>{process.env.REACT_APP_EMPTY_ACTIVITY}. Return to <Link to="/">{process.env.REACT_APP_ACTIVATIES_HEADING}</Link> Page</p>
+            </li>
         );
 
         return(
@@ -129,9 +99,8 @@ class Plan extends Component<IPlanProps> {
                 <ul className="collection center"> 
                     { addedItems } 
                 </ul>
-                <span>
-                    <RotateLeftIcon onClick={ () => { this.reset() }}/>
-                </span>
+                <a href="/"><RotateLeftIcon /></a>
+                {/*<RotateLeftIcon onClick={ () => this.reset() }/>*/}
             </div>
         )}
 }
@@ -144,19 +113,10 @@ const mapStateToProps = (state : any)=>{
 
 const mapDispatchToProps = (dispatch: any) => {
     return {
-        removePlanItem: (id : number) => {
-            dispatch(removePlanItem(id)) 
-        },
-        completePlanItem: (id : number) => {
-            dispatch(completePlanItem(id)) 
-        },
-        addPlanQuantity: (id : number) => {
-            dispatch(addPlanQuantity(id)) 
-        },
-        subtractPlanQuantity: (id : number) => {
-            dispatch(subtractPlanQuantity(id))
-        },
-        reset: () => { dispatch(reset()) }
+        removePlanItem: (id : number) => { dispatch(removePlanItem(id)) },
+        completePlanItem: (id : number) => { dispatch(completePlanItem(id)) },
+        addPlanQuantity: (id : number) => { dispatch(addPlanQuantity(id)) },
+        subtractPlanQuantity: (id : number) => { dispatch(subtractPlanQuantity(id)) }
     }
 }
 
