@@ -14,19 +14,13 @@ import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
 */
 
 interface IScorecardProps {
-    reset?: any;
-    score?: any;
-    scoreGroups?: any;
+    score: any;
+    scoreGroups: any;
 }
 class Scorecard extends Component<IScorecardProps> {
 
     componentDidMount () {
         window.scrollTo(0, 0)
-    }
-
-    reset = () => {
-        alert('Resetting Data');
-        this.props.reset(); 
     }
 
     render () {
@@ -172,9 +166,6 @@ const mapDispatchToProps= (dispatch : any) => {
     return {
         addPlanItem: (id : number) => { 
             dispatch(addPlanItem(id)) 
-        },
-        reset: () => { 
-            dispatch(reset()) 
         }
     }
 }
