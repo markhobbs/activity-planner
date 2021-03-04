@@ -5,8 +5,8 @@ const medium = '_768.jpg';
 const large = '_1280.jpg';*/
 
 interface IImageProps {
-  alt?: string;
-  src?: string;
+  alt: string;
+  src: string;
 }
 
 class Image extends React.Component<IImageProps> {
