@@ -30,6 +30,6 @@ describe('Menu Component', () => {
         });
         // get ahold of the button element, and trigger some clicks on it
         const button = document.querySelector("[data-testid=menu] nav");
-        expect(button.children.length).toBe(6);
+        expect(button.children.length).toBe(5);
     });
 });
