@@ -2,6 +2,45 @@ import React from "react";
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+
+const Burger = ({ open, setOpen }) => {
+  return (
+    <StyledBurger open={open} onClick={() => setOpen(!open)}>
+      <div />
+      <div />
+      <div />
+    </StyledBurger>
+  )
+}
+
+const MenuItems = ({ open, setOpen }) => {
+
+  return (
+    <StyledMenu open={open} onClick={() => setOpen(!open)}>
+      <Link to="/">Activitys</Link>
+      <Link to="/plan">Planner</Link>
+      <Link to="/awards">Awards</Link>
+      <hr />
+      <p>
+        <Link to="/about"><small>About</small></Link> :: <Link to="/paginated"><small>Paginated</small></Link>
+      </p>
+      </StyledMenu>
+  )
+}
+
+const Menu = () => {
+  const [open, setOpen] = React.useState(false);
+  const node = React.useRef();
+  return (
+    <div data-testid="menu">
+      <div ref={node}>
+        <Burger open={open} setOpen={setOpen} />
+        <MenuItems open={open} setOpen={setOpen} />
+      </div>
+    </div>
+  )  
+}
+
 const StyledMenu = styled.nav`
   z-index: 2;
   display: flex;
@@ -44,21 +83,6 @@ const StyledMenu = styled.nav`
   }
 `
 
-const MenuItems = ({ open }) => {
-  return (
-    <StyledMenu open={open}>
-      <Link to="/">Activitys</Link>
-      <Link to="/plan">Planner</Link>
-      <Link to="/awards">Awards</Link>
-      <hr />
-      <p><Link to="/about"><small>About</small></Link> :: <Link to="/paginated"><small>Paginated</small></Link></p>
-      {/*<a href="/"><span role="img" aria-label="about us">Activitys</span>Activitys</a>
-      <a href="/plan"><span role="img" aria-label="price">Planner</span>Planner</a>
-      <a href="/awards"><span role="img" aria-label="contact">Achievements</span>Awards</a>*/}
-      </StyledMenu>
-  )
-}
-
 const StyledBurger = styled.button`
   position: absolute;
   top: 1rem;
@@ -81,7 +105,10 @@ const StyledBurger = styled.button`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${({ open }) => open ? '#0D0C1D' : '#EFFFFA'};
+
+    background: ${({ open }) => open ? '#0D0C1D' : '#0D0C1D'};
+    border-color: ${({ open }) => open ? '#0D0C1D' : '#0D0C1D'};
+
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
@@ -101,52 +128,5 @@ const StyledBurger = styled.button`
     }
   }
 `
-
-const Burger = ({ open, setOpen }) => {
-  return (
-    <StyledBurger open={open} onClick={() => setOpen(!open)}>
-      <div />
-      <div />
-      <div />
-    </StyledBurger>
-  )
-}
-
-const Menu = () => {
-  const [open, setOpen] = React.useState(false);
-  const node = React.useRef();
-  return (
-    <div data-testid="menu">
-      <div>
-        {/*<h1>Menu</h1>
-        <img src="https://image.flaticon.com/icons/svg/2016/2016012.svg" alt="burger icon" />
-        <small>Icon made by <a href="https://www.freepik.com/home">Freepik</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></small>
-       */}</div>
-      <div ref={node}>
-        <Burger open={open} setOpen={setOpen} />
-        <MenuItems open={open} setOpen={setOpen} />
-      </div>
-    </div>
-  )  
-}
-
-//ReactDOM.render(<App />, document.getElementById('app'));
-/*const useOnClickOutside = (ref, handler) => {
-  React.useEffect(() => {
-    const listener = event => {
-      if (!ref.current || ref.current.contains(event.target)) {
-        return;
-      }
-      handler(event);
-    };
-    document.addEventListener('mousedown', listener);
-
-    return () => {
-      document.removeEventListener('mousedown', listener);
-    };
-  },
-  [ref, handler],
-  );
-};*/
 
 export default Menu;

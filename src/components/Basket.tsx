@@ -1,31 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removePlanItem, completePlanItem, addPlanQuantity, subtractPlanQuantity} from '../redux/actions/planActions';
-import { withStyles } from '@material-ui/core/styles';
-import Badge from '@material-ui/core/Badge';
-import IconButton from '@material-ui/core/IconButton';
-import DirectionsRunIcon from '@material-ui/icons/DirectionsRun';
+import IconButton from '@mui/material/IconButton';
+import DirectionsRun from '@mui/icons-material/DirectionsRun';
 
 interface IBasketProps {
     items?: any;
 }
 
-const StyledBadge = withStyles((theme) => ({
-    badge: {
-      top: 10,
-      fontSize: '10px',
-      border: `2px solid ${theme.palette.background.paper}`,
-      padding: '0 4px',
-    },
-}))(Badge);
-
 class Basket extends Component<IBasketProps>{
     render() { 
         return(  
             <IconButton aria-label="plan" style={{ display: 'none', padding: "0", color: "white" }}>
-                <StyledBadge badgeContent={this.props.items.length} color="secondary">
-                    <DirectionsRunIcon  />
-                </StyledBadge>
+                <DirectionsRun  />
             </IconButton>
         )    
     }

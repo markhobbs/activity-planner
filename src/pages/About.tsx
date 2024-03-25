@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
-/* Components */
 import PageHeader from '../components/PageHeader';
 
 const About = () => {

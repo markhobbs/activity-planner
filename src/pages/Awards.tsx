@@ -1,38 +1,26 @@
 import React, { Component } from 'react';
-/* Redux and Reducers */
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addPlanItem} from '../redux/actions/planActions';
-/* Componenets  */
 import PageHeader from '../components/PageHeader';
 import ColorChoice from '../components/ColorChoice';
-import { Link } from 'react-router-dom';
-
-/* Material UI  */
-import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
-
-/* 
-    History Page Class 
-*/
+import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 
 interface IAwardsProps {
     score: number[];
 }
 
 class Awards extends Component<IAwardsProps> {
-
     componentDidMount() {
         window.scrollTo(0, 0)
     }
-
     render() {
         // Loop through each activity item
         let scores = this.props.score.map( (score : any, iKey=-1 ) => {
             iKey++;
             return (
-                /*TODO:  Lots of duplication, can be cleaned up */
                 <li className="score-list-item" key={iKey}> 
-                    <div className="marker">{iKey} : </div>
-
+                    {/*<div className="marker">{iKey} : </div>*/}
                     { !score[0] || 
                     <span 
                         className="reward_chip"
@@ -42,7 +30,6 @@ class Awards extends Component<IAwardsProps> {
                         <AccessibilityNewIcon /><span>{ score[0][0] + " " +score[0][1] }</span>
                     </span>
                     }
-
                     { !score[1] || 
                     <span 
                         className="reward_chip"
@@ -52,7 +39,6 @@ class Awards extends Component<IAwardsProps> {
                         <AccessibilityNewIcon /><span>{ score[1][0] + " " +score[1][1] }</span>
                     </span>
                     }   
-
                     { !score[2] || 
                     <span 
                         className="reward_chip"
@@ -62,7 +48,6 @@ class Awards extends Component<IAwardsProps> {
                         <AccessibilityNewIcon /><span>{ score[2][0] + " " +score[2][1] }</span>
                     </span>
                     } 
-
                     { !score[3] || 
                     <span 
                         className="reward_chip"
@@ -92,7 +77,6 @@ class Awards extends Component<IAwardsProps> {
                         <AccessibilityNewIcon /><span>{ score[5][0] + " " +score[5][1] }</span>
                     </span>
                     }   
-
                     { !score[6] || 
                     <span 
                         className="reward_chip"
@@ -140,6 +124,3 @@ const mapDispatchToProps= (dispatch: any) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Awards);
-
-
-

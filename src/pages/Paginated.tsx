@@ -4,10 +4,9 @@ import Post from '../components/Post';
 import Link from '../components/Link';
 import Toggle from '../components/Toggle';
 import Switch from '../components/Switch';
-
 const url = '/static/posts.json';
 
-export default function App() {
+function App() {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState("");
 
@@ -46,7 +45,8 @@ export default function App() {
             data-testid="switch" />
           <Link 
             page="/plan" 
-            children="View Planner" />
+            children="View Planner" 
+          />
         </>
       ) : (
         // Loadng 
@@ -55,3 +55,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;

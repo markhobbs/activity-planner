@@ -1,11 +1,10 @@
-import React,{ Component } from "react";
-/* Components Icons */
+import React, { Component } from "react";
 import Image from  './Image';
 import Kit from './Kit';
 import Rewards from './Rewards';
 import CardActions from './CardActions';
-/* MaterialUI Icons */
-import StarsIcon from '@material-ui/icons/Stars';
+import Stars from '@mui/icons-material/Stars';
+import styled from 'styled-components';
 
 interface ICardProps {
   item?: any;
@@ -14,18 +13,15 @@ interface ICardProps {
 }
 
 class Card extends Component<ICardProps> {
-  
   render () {
-    // Build Modifiers if required
     let featuredClass = this.props.item.featured ? " card--featured" : "";
     let completedlass = this.props.item.completed ?  " card--completed" : "";
     let fullClass = "card " + featuredClass + completedlass;
-
     return (
       <li key={this.props.item.id} className={fullClass}>
-        
         <div className="card-image">                   
-          <Image src = {this.props.item.img} 
+          <Image 
+            src = {this.props.item.img} 
             alt = {this.props.item.title} 
           />
           <CardActions
@@ -34,24 +30,38 @@ class Card extends Component<ICardProps> {
             completed = {this.props.item.completed} 
           />
         </div>
-
-        <div className="card-content">
-          <div className="card-title">
-              {this.props.item.title} 
+        <CardContent>
+          <h3>
+              {this.props.item.title} &nbsp;
               <small>
                   {this.props.item.rep}
-                  <sup>rep(s)</sup>
+                  <sup> rep(s)</sup>
               </small>
-          </div>
+          </h3>
           <p>{this.props.item.headline}</p> 
           { !this.props.item.kit || <Kit items={this.props.item.kit} /> }
-        </div>
-
-        { !this.props.item.featured || <div className="card-badge"><StarsIcon style={{ color: "#a17f1a" }} /></div> }
+        </CardContent>
+        { !this.props.item.featured || 
+          <Badge>
+            <Stars style={{ color: "#a17f1a" }} />
+          </Badge> 
+        }
         { !this.props.item.rewards || <Rewards items={ this.props.item.rewards } /> }
     </li>
     );
   }
 }
+
+const Badge = styled.div`
+  padding: 0 24px;
+`
+
+const CardContent = styled.div`
+  padding: 0 24px;
+  h3 {
+    margin-top: 0;
+    font-size: 2em;
+  }
+`
 
 export default Card;

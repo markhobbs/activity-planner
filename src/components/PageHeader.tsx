@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
 interface IPageHeaderProps {
     heading?: string;
@@ -7,9 +8,16 @@ interface IPageHeaderProps {
 class PageHeader extends Component<IPageHeaderProps> {
     render() {
         return(
-            <h1 className="heading">{this.props.heading}</h1>
+            <Heading>
+                { this.props.heading }
+            </Heading>
         );
     }
 };
+
+const Heading = styled.h2`
+    font-size: 2em;
+    margin: 12px 0;
+`
 
 export default PageHeader;

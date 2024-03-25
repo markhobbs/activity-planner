@@ -1,30 +1,28 @@
 import React, { Component } from 'react';
-/* Redux and Reducers */
 import { connect } from 'react-redux';
-/* Components */
 import Card from '../components/Card';
 import PageHeader from '../components/PageHeader';
+import styled from 'styled-components';
 
 interface IActivityProps {
     ikey: number;
     items: string[];
 }
 
-/* Activity Page Class */
 class Activity extends Component<IActivityProps>  {
     render() {
-        // Loop through each activity item
         let cardItems = this.props.items.map( (item, ikey)  => {
             return ( <Card key={ikey} item={item} /> )
         });
-
         return(
-            <div className="container">
-                <PageHeader heading = { process.env.REACT_APP_ACTIVATIES_HEADING } />
-                <ul className="box">
-                    {cardItems}
-                </ul>
-            </div>
+            <Container>
+                <PageHeader 
+                    heading = { process.env.REACT_APP_ACTIVATIES_HEADING } 
+                />
+                <ActvitiesList>
+                    { cardItems }
+                </ActvitiesList>
+            </Container>
         );
     }
 }
@@ -34,5 +32,28 @@ const mapStateToProps = (state: any) => {
       items: state.plan.items,
     }
 }
+
+const Container = styled.div`
+    margin: 0 auto;
+    padding: 0 10px;
+`
+const ActvitiesList = styled.ul`
+    @media (min-width: 600px) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        align-items: baseline;
+      
+        li {
+            width: 33%;
+            display: flex;
+            flex-grow   grow;
+            flex-direction: column;
+            > div {
+                width: 100%;
+            }
+        }
+    }
+`
 
 export default connect(mapStateToProps)(Activity);

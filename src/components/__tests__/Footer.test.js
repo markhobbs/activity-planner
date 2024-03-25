@@ -1,16 +1,11 @@
 import React from 'react';
-import Adapter from 'enzyme-adapter-react-16';
-import { configure, shallow} from 'enzyme';
+import { render, screen } from '@testing-library/react'
 import Footer from '../Footer';
+import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/extend-expect';
 
-configure({ adapter: new Adapter() });
-
-describe('Footer Component', () => {
-    it('Should be selectable by class "footer"', function() {
-        expect(shallow(<Footer />).is('.footer')).toBe(true);
-    });
-
-    it('Should be centered"', function() {
-        expect(shallow(<Footer />).is('.center')).toBe(true);
-    });
-});
+test("Footer renders successfully", () => {
+    render(<Footer/>);
+    const element = screen.getByText(/2024/i);
+    expect(element).toBeInTheDocument();
+})

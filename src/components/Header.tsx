@@ -1,23 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import OpacityIcon from '@material-ui/icons/Opacity';
+import Opacity from '@mui/icons-material/Opacity';
 import Basket from  './Basket';
 import Menu from '../components/Menu';
+import styled from 'styled-components';
 
 const Header = () => {
     return(
         <header className="header">
             <Menu />
-            <div className="container">
+            <Container>
                 <Link to="/" className="logo">
-                    <OpacityIcon /><span>{ process.env.REACT_APP_TITLE }</span>
+                    <Opacity />
+                    <span>{ process.env.REACT_APP_TITLE }</span>
                 </Link>
                 <Link to="/plan" className="right">
                     <Basket />
                 </Link>
-                </div>
+            </Container>
         </header>
     )
 }
+
+
+const Container = styled.div`
+    text-align: right;
+    padding: 1rem 1rem;
+`
 
 export default Header;

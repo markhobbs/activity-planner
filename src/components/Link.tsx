@@ -7,11 +7,12 @@ const STATUS = {
 };
 
 interface ILinkProps {
-  page? : string
+  page? : string;
+  children?: React.ReactNode;
 }
 
 interface ILinkState {
-  class?: string,
+  class?: string;
 }
 
 export default class Link extends React.Component<ILinkProps, ILinkState> {

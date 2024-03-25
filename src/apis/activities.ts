@@ -1,12 +1,11 @@
-import Item1 from '../images/plank.jpg';
-import Item2 from '../images/pushup.jpg';
-import Item3 from '../images/squat.jpg';
-import Item4 from '../images/plank.jpg';
-import Item5 from '../images/plank.jpg';
-import Item7 from '../images/plank.jpg';
-import Item10 from '../images/plank.jpg';
-import Item11 from '../images/punching.jpg';
-
+const Item1 = require('../images/plank.jpg')
+const Item2 = require('../images/pushup.jpg')
+const Item3 = require('../images/squat.jpg')
+const Item4 = require('../images/plank.jpg')
+const Item5 = require('../images/plank.jpg')
+const Item7 = require('../images/plank.jpg')
+const Item10 = require('../images/plank.jpg')
+const Item11 = require('../images/punching.jpg')
 
 const initState = {
     score: [],

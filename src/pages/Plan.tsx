@@ -1,22 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-/* Redux and Reducers */
 import { connect } from 'react-redux';
-import { 
-    removePlanItem, 
-    completePlanItem, 
-    addPlanQuantity, 
-    subtractPlanQuantity } 
-    from '../redux/actions/planActions';
-/* Components*/
+import { removePlanItem, completePlanItem, addPlanQuantity, subtractPlanQuantity } from '../redux/actions/planActions';
 import PageHeader from '../components/PageHeader';
-// Material UI Icons
-import AlarmOnIcon from '@material-ui/icons/AlarmOn';
-import Button from '@material-ui/core/Button';
-import DeleteIcon from '@material-ui/icons/Delete';
-import RotateLeftIcon from '@material-ui/icons/RotateLeft';
-import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import AlarmOnIcon from '@mui/icons-material/AlarmOn';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import RotateLeftIcon from '@mui/icons-material/RotateLeft';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 interface IPlanProps {
     items: string[];
@@ -28,7 +20,6 @@ interface IPlanProps {
 
 /* Planner Page Class */
 class Plan extends React.Component<IPlanProps> {
-
     handleRemove = (id : number) => this.props.removePlanItem(id); //to remove the item completely
     handleComplete = (id : number) =>  this.props.completePlanItem(id); //progress to completion
     handleAddQuantity = (id : number) => this.props.addPlanQuantity(id); //to add the quantity
@@ -46,13 +37,17 @@ class Plan extends React.Component<IPlanProps> {
         let addedItems = this.props.items.length ? (this.props.items.map((item: any)=> {
             return (
                 <li className="collection-item" key={item.id}>
-                    <div className="item-image">
+                    <div 
+                        className="item-image">
                         <h6>{item.title}</h6>
                         <img src={item.img} alt={item.title} />
                     </div>
-
-                    <div className="item-quantity">
-                        <p>{item.rep} <sup>rep(s)</sup> {item.quantity} <sup>set(s)</sup></p>
+                    <div 
+                        className="item-quantity">
+                        <p>{item.rep} 
+                            <sup>rep(s)</sup> {item.quantity} 
+                            <sup>set(s)</sup>
+                        </p>
                         <Button 
                             disabled={item.completed} 
                             startIcon={<RemoveCircleOutlineIcon />} 
@@ -68,7 +63,8 @@ class Plan extends React.Component<IPlanProps> {
                             }}>
                         </Button>
                     </div>
-                    <div className="item-cta">
+                    <div 
+                        className="">
                         <Button 
                             disabled={item.completed} 
                             variant="contained" 
@@ -76,7 +72,7 @@ class Plan extends React.Component<IPlanProps> {
                             startIcon={<AlarmOnIcon />} 
                             onClick={()=>{this.handleComplete(item.id)}}>
                             {item.completed ? "Completed": "Complete" }
-                        </Button>
+                        </Button>&nbsp;
                         <Button 
                             variant="contained" 
                             color="secondary" 

@@ -1,20 +1,16 @@
 import React from "react";
-/* Componenets  */
 import ColorChoice from './ColorChoice';
-/* Material UI  */
-
-import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
+import styled from 'styled-components';
+import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 
 interface propsCast {
     items: any[];
 }
 
 const Rewards = ( props: propsCast ) => {
-
     let rewardLabel : string;
     let rewardValue : number;
     let chipLabel : string;
-
     let rewards = props.items.map( ( reward : any, key : number )  => {
 
         // If reward Label, build a Chip.
@@ -26,13 +22,13 @@ const Rewards = ( props: propsCast ) => {
         key++;
         
         return (
-            <span 
+            <Wrapper 
                 key={key} 
                 className="reward_chip"
                 style={{
                     backgroundColor: ColorChoice(rewardValue)
                 }}><AccessibilityNewIcon />{chipLabel}
-            </span>
+            </Wrapper>
         );
     });
 
@@ -42,5 +38,9 @@ const Rewards = ( props: propsCast ) => {
         </div> 
     )
 };
+
+const Wrapper = styled.div`
+  padding: 12px 24px;
+`
  
 export default Rewards;
