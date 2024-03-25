@@ -1,5 +1,5 @@
 # Basic Fitness Manager application built with React & Redux
-This simple application prototype shows how we can use React and Redux to build a friendly user experience with instant visual updates.
+This simple application shows how we can use React and Redux to build a interactive ui for planning activitys.
 
 ## Features
 * Add and Remove activities 
