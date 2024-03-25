@@ -12,15 +12,12 @@ const Rewards = ( props: propsCast ) => {
     let rewardValue : number;
     let chipLabel : string;
     let rewards = props.items.map( ( reward : any, key : number )  => {
-
-        // If reward Label, build a Chip.
         if (reward[0]) {
             rewardLabel = reward[0];
             rewardValue = reward[1];
             chipLabel = `+${rewardLabel} ${rewardValue}`;  
         }
         key++;
-        
         return (
             <Wrapper 
                 key={key} 
@@ -31,7 +28,6 @@ const Rewards = ( props: propsCast ) => {
             </Wrapper>
         );
     });
-
     return ( 
         <div className="rewards">
             {rewards}

@@ -15,7 +15,6 @@ class Scorecard extends Component<IScorecardProps> {
         window.scrollTo(0, 0)
     }
     render () {
-        // Loop through each activity item
         let scores = this.props.score.map( (score : any, iKey=0 ) => {
             let scoreGroups = this.props.scoreGroups.map( (scoreGroup : any, lkey=0 ) => {
                 if (score[0] && scoreGroup[0] === score[0][0]) {
@@ -108,7 +107,7 @@ class Scorecard extends Component<IScorecardProps> {
                         <Chip
                             className="rewards_chip"
                             icon={<AccessibilityNewIcon />}
-                            label={ score[6][0] + " " + score[6][1] } //new
+                            label={ score[6][0] + " " + score[6][1] }
                             style={{
                                 backgroundColor: ColorChoice(score[6][1])
                             }} />

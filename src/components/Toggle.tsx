@@ -1,4 +1,3 @@
-// toggle.js
 import React, { useState } from "react";
 
 export default function Toggle(props : any) {

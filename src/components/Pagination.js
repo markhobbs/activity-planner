@@ -32,18 +32,14 @@ function Pagination({ data, RenderComponent, title, pageLimit, dataLimit }) {
     return (
       <>
           <div className="pagination">
-            {/* previous button */}
             <button onClick={goToPreviousPage} className={`prev ${currentPage === 1 ? 'disabled' : ''}`}>prev</button>
-            {/* show page numbers */}
             {getPaginationGroup().map((item, index) => (
               <button key={index} onClick={changePage} className={`paginationItem ${currentPage === item ? 'active' : null}`}>
                 <span>{item}</span>
               </button>
             ))}
-            {/* next button */}
             <button onClick={goToNextPage} className={`next ${currentPage === pages ? 'disabled' : ''}`}>next</button>
           </div>
-          {/* show the posts, 10 posts at a time */}
           <div className="dataContainer">
             {getPaginatedData().map((d, idx) => (
               <RenderComponent key={idx} data={d} />

@@ -15,12 +15,10 @@ class Awards extends Component<IAwardsProps> {
         window.scrollTo(0, 0)
     }
     render() {
-        // Loop through each activity item
         let scores = this.props.score.map( (score : any, iKey=-1 ) => {
             iKey++;
             return (
                 <li className="score-list-item" key={iKey}> 
-                    {/*<div className="marker">{iKey} : </div>*/}
                     { !score[0] || 
                     <span 
                         className="reward_chip"

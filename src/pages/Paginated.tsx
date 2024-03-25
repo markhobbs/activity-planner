@@ -49,7 +49,6 @@ function App() {
           />
         </>
       ) : (
-        // Loadng 
         <h1>No Posts to display</h1>
       )}
     </div>

@@ -18,12 +18,11 @@ interface IPlanProps {
     addPlanQuantity: (id: number) => void;    
 }
 
-/* Planner Page Class */
 class Plan extends React.Component<IPlanProps> {
-    handleRemove = (id : number) => this.props.removePlanItem(id); //to remove the item completely
-    handleComplete = (id : number) =>  this.props.completePlanItem(id); //progress to completion
-    handleAddQuantity = (id : number) => this.props.addPlanQuantity(id); //to add the quantity
-    handleSubtractQuantity = (id : number) => { this.props.subtractPlanQuantity(id) } //to substruct from the quantity
+    handleRemove = (id : number) => this.props.removePlanItem(id); 
+    handleComplete = (id : number) =>  this.props.completePlanItem(id); 
+    handleAddQuantity = (id : number) => this.props.addPlanQuantity(id); 
+    handleSubtractQuantity = (id : number) => { this.props.subtractPlanQuantity(id) } 
 
     reset = () => {
         if (!window.confirm('Are you sure?')){

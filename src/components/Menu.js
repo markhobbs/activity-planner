@@ -58,7 +58,6 @@ const StyledMenu = styled.nav`
   width: 50%;
 
   @media (max-width: 576px) {
-      //width: 100%;
       width: 80%;
   }
 
