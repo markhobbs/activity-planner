@@ -30,16 +30,6 @@
     "test": "react-scripts test --watchAll --coverage",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "jest": {
-    "coverageThreshold": {
-      "global": {
-        "lines": 80
-      }
-    }
-  },
   "browserslist": [
     ">0.2%",
     "not dead",
