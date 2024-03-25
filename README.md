@@ -1,14 +1,16 @@
-# Basic Fitness Manager application built with React & Redux
-This simple application shows how we can use React and Redux to build a interactive ui for planning activitys.
+# Basic Fitness Manager Application Built with React & Redux
+This simple application demonstrates how to use React and Redux to create an interactive UI for planning activities.
 
 ## Features
-* Add and Remove activities 
-* Edit the quantity of the Activity in real-time
-* Calculate automatically the total Activity Actions
+* Add and remove activities
+* Edit the quantity of each activity in real-time
+* Automatically calculate the total activity actions
 
-## Starting and building
-```bash
+## Getting Started
+To start and build the application, follow these steps:
+```
 npm install
 npm run start
 npm run build
 ```
+Feel free to customize and enhance this basic fitness manager according to your needs! 🏋️‍♂️💪

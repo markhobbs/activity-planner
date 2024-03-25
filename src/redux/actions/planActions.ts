@@ -7,43 +7,72 @@ import {
     RESET
 } from './action-types/plan-actions'
 
-export const addPlanItem = (id: number)=>{
-    return{
+/**
+ * Adds a plan item with the specified ID.
+ * @param {number} id - The unique identifier for the plan item.
+ * @returns {Object} - An action object with the type ADD_PLAN_ITEM.
+ */
+export const addPlanItem = (id: number) => {
+    return {
         type: ADD_PLAN_ITEM,
         id
-    }
-}
+    };
+};
 
-export const removePlanItem = (id: number)=>{
-    return{
+/**
+ * Removes a plan item with the specified ID.
+ * @param {number} id - The unique identifier for the plan item.
+ * @returns {Object} - An action object with the type REMOVE_PLAN_ITEM.
+ */
+export const removePlanItem = (id: number) => {
+    return {
         type: REMOVE_PLAN_ITEM,
         id
-    }
-}
+    };
+};
 
-export const completePlanItem = (id: number)=>{
-    return{
+/**
+ * Marks a plan item as completed using the specified ID.
+ * @param {number} id - The unique identifier for the plan item.
+ * @returns {Object} - An action object with the type COMPLETE_PLAN_ITEM.
+ */
+export const completePlanItem = (id: number) => {
+    return {
         type: COMPLETE_PLAN_ITEM,
         id
-    }
-}
+    };
+};
 
-export const subtractPlanQuantity = (id: number)=>{
+/**
+ * Subtracts a quantity from a plan item with the specified ID.
+ * @param {number} id - The unique identifier for the plan item.
+ * @returns {Object} - An action object with the type SUB_PLAN_QUANTITY.
+ */
+export const subtractPlanQuantity = (id: number) => {
     return {
         type: SUB_PLAN_QUANTITY,
         id
-    }
-}
+    };
+};
 
-export const addPlanQuantity = (id: number)=>{
+/**
+ * Adds a quantity to a plan item with the specified ID.
+ * @param {number} id - The unique identifier for the plan item.
+ * @returns {Object} - An action object with the type ADD_PLAN_QUANTITY.
+ */
+export const addPlanQuantity = (id: number) => {
     return {
         type: ADD_PLAN_QUANTITY,
         id
-    }
-}
+    };
+};
 
+/**
+ * Resets the plan items.
+ * @returns {Object} - An action object with the type RESET.
+ */
 export const reset = () => {
     return {
         type: RESET
-    }
-}
+    };
+};
