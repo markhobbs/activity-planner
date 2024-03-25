@@ -12,4 +12,3 @@ npm install
 npm run start
 npm run build
 ```
-The application will start automatically in your browser on http://localhost:3000
