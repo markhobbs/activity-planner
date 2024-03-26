@@ -22,7 +22,7 @@ const initState = {
         {   id: 1,
             img: Item1, 
             title: 'Plank', 
-            headline: "The plank is one of the greatest and most underrated exercises ever", 
+            headline: "The plank exercise is a simple yet effective bodyweight exercise that primarily targets the core muscles", 
             desc: "The plank is one of the greatest and most underrated exercises ever. Its practically a one-move static exercise that will help you build a core of steel, ripped abs and strong shoulders. Just get into push-up position on the ﬂoor, bend your elbows 90 degrees and prop yourself on the elbows, forearms and forefeet, forming a straight line from head to feet, then hold it for as long as you can without moving your waist or butt", 
             rep: 5, 
             meta: 'Core Abs Shoulders',

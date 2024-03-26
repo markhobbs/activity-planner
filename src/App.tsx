@@ -16,9 +16,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <React.StrictMode>
-          <div className="App">
             <Header/>
-            <main>
             <Switch>
               <Route path="/about" component={About}/>
               <Route exact path="/" component={Activity}/>
@@ -28,10 +26,8 @@ class App extends Component {
               <Route path="/store" component={Store}/>
               <Route path="/awards" component={Awards}/>
             </Switch>
-            </main>
             <PlanProgress />
             <Footer />
-          </div>
           </React.StrictMode>
       </BrowserRouter>
     );

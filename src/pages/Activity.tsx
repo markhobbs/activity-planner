@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Card from '../components/Card';
-import PageHeader from '../components/PageHeader';
+import Heading from '../components/Heading';
 import styled from 'styled-components';
 
 interface IActivityProps {
@@ -16,7 +16,7 @@ class Activity extends Component<IActivityProps>  {
         });
         return(
             <Container>
-                <PageHeader 
+                <Heading 
                     heading = { process.env.REACT_APP_ACTIVATIES_HEADING } 
                 />
                 <ActvitiesList>

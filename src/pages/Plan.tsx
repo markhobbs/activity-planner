@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { removePlanItem, completePlanItem, addPlanQuantity, subtractPlanQuantity } from '../redux/actions/planActions';
-import PageHeader from '../components/PageHeader';
+import Heading from '../components/Heading';
 import AlarmOnIcon from '@mui/icons-material/AlarmOn';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -92,7 +92,7 @@ class Plan extends React.Component<IPlanProps> {
 
         return(
             <div className="container">  
-                <PageHeader heading ={ process.env.REACT_APP_PLAN_HEADING } />
+                <Heading heading ={ process.env.REACT_APP_PLAN_HEADING } />
                 <ul className="collection center"> 
                     { addedItems } 
                 </ul>

@@ -5,19 +5,17 @@ interface IPageHeaderProps {
     heading?: string;
 }
    
-class PageHeader extends Component<IPageHeaderProps> {
+class Heading extends Component<IPageHeaderProps> {
     render() {
         return(
-            <Heading>
-                { this.props.heading }
-            </Heading>
+            <Element>{ this.props.heading }</Element>
         );
     }
 };
 
-const Heading = styled.h2`
+const Element = styled.h2`
     font-size: 2em;
     margin: 12px 0;
 `
 
-export default PageHeader;
+export default Heading;

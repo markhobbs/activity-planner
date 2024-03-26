@@ -16,18 +16,17 @@ class PlanProgress extends Component<IPlanProgressProps> {
         let isPercentageNan = isNaN(percentage) ? true: false;
         return (
             <section className={modifier}>
-            { isPercentageNan || 
-                <div className="container">
-                    <h5>
-                        { this.props.addedItems.length }
-                        <sup> activity(s)</sup> { this.props.total } <sup> rep(s) </sup>
-                    </h5> 
-                    <h6>
-                        <span>Progress : {percentage} <sup>&#37;</sup></span>
-                        {/*({this.props.totalCompleted}<sup> rep(s)</sup>)*/}
-                    </h6>
-                </div>
-            }
+                { isPercentageNan || 
+                    <div className="container">
+                        <h5>
+                            { this.props.addedItems.length }
+                            <sup> activity(s)</sup> { this.props.total } <sup> rep(s) </sup>
+                        </h5> 
+                        <h6>
+                            <span>Progress : {percentage} <sup>&#37;</sup></span>
+                        </h6>
+                    </div>
+                }
             </section>
         )
     }

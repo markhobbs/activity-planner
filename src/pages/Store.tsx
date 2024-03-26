@@ -1,6 +1,6 @@
 import React , {useEffect} from 'react';
 import { Link } from 'react-router-dom';
-import PageHeader from '../components/PageHeader';
+import Heading from '../components/Heading';
 
 const Store = () => {
     useEffect(() => {
@@ -8,7 +8,7 @@ const Store = () => {
     }, [])
     return (
         <div className="container center"> 
-            <PageHeader heading = { process.env.REACT_APP_STORE_HEADING } />
+            <Heading heading = { process.env.REACT_APP_STORE_HEADING } />
             <p>{ process.env.REACT_APP_STORE_SUMMARY }</p>
             <p>Return to <Link to="/">{ process.env.REACT_APP_ACTIVATIES_HEADING }</Link> Page</p>  
         </div>

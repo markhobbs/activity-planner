@@ -1,49 +1,56 @@
 import React from 'react';
 
+// Define possible states for the link
 const STATUS = {
   HOVERED: 'hovered',
   NORMAL: 'normal',
 };
 
+// Props interface for the Link component
 interface ILinkProps {
-  page? : string;
+  page?: string;
   children?: React.ReactNode;
 }
 
+// State interface for the Link component
 interface ILinkState {
-  class?: string;
+  linkStatus: string;
 }
 
-export default class Link extends React.Component<ILinkProps, ILinkState> {
-  constructor(props : any) {
+class Link extends React.Component<ILinkProps, ILinkState> {
+  constructor(props: ILinkProps) {
     super(props);
 
     this._onMouseEnter = this._onMouseEnter.bind(this);
     this._onMouseLeave = this._onMouseLeave.bind(this);
 
     this.state = {
-      class: STATUS.NORMAL,
+      linkStatus: STATUS.NORMAL,
     };
   }
 
+  // Event handler for mouse enter
   _onMouseEnter() {
-    this.setState({class: STATUS.HOVERED});
+    this.setState({ linkStatus: STATUS.HOVERED });
   }
 
+  // Event handler for mouse leave
   _onMouseLeave() {
-    this.setState({class: STATUS.NORMAL});
+    this.setState({ linkStatus: STATUS.NORMAL });
   }
 
   render() {
+    const { page, children } = this.props;
+    const { linkStatus } = this.state;
+
     return (
-      <a
-        className={this.state.class}
-        href={this.props.page || '#'}
-        onMouseEnter={this._onMouseEnter}
+      <a className={linkStatus} href={page || '#'} onMouseEnter={this._onMouseEnter}
         onMouseLeave={this._onMouseLeave}
       >
-        {this.props.children}
+        {children}
       </a>
     );
   }
 }
+
+export default Link;

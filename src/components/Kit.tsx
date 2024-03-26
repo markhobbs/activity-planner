@@ -1,6 +1,6 @@
 import React from "react";
 
-const kit = (props: { items: any[] }) => {
+const Kit = (props: { items: any[] }) => {
     let kitList : any[] = [];
     if(props.items){
         kitList = props.items.map( (item: { aparatus: string }) => {
@@ -17,4 +17,4 @@ const kit = (props: { items: any[] }) => {
     )
 };
 
-export default kit;
+export default Kit;

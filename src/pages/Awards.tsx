@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addPlanItem} from '../redux/actions/planActions';
-import PageHeader from '../components/PageHeader';
+import Heading from '../components/Heading';
 import ColorChoice from '../components/ColorChoice';
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 
@@ -89,7 +89,7 @@ class Awards extends Component<IAwardsProps> {
         });
         return(
             <div className="container">
-                <PageHeader heading = {process.env.REACT_APP_AWARDS_HEADING} />
+                <Heading heading = {process.env.REACT_APP_AWARDS_HEADING} />
                 <p>{process.env.REACT_APP_AWARDS_SUMMARY}</p>
                 { scores.length ? 
                 <ul className="score-list">

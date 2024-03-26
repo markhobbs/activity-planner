@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addPlanItem, reset } from '../redux/actions/planActions';
-import PageHeader from '../components/PageHeader';
+import { addPlanItem } from '../redux/actions/planActions';
+import Heading from '../components/Heading';
 import ColorChoice from '../components/ColorChoice';
 import Chip from '@mui/material/Chip';
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
@@ -119,7 +119,7 @@ class Scorecard extends Component<IScorecardProps> {
 
         return(
             <div className="container">
-                <PageHeader heading = { process.env.REACT_APP_SCORECARD_HEADING } />
+                <Heading heading = { process.env.REACT_APP_SCORECARD_HEADING } />
                 <p>{ process.env.REACT_APP_SCORECARD_SUMMARY }</p>
                 <ul className="score-list">
                     { scores }
