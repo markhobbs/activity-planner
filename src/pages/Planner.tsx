@@ -18,7 +18,7 @@ interface IPlanProps {
     addPlanQuantity: (id: number) => void;    
 }
 
-class Plan extends React.Component<IPlanProps> {
+class Planner extends React.Component<IPlanProps> {
     handleRemove = (id : number) => this.props.removePlanItem(id); 
     handleComplete = (id : number) =>  this.props.completePlanItem(id); 
     handleAddQuantity = (id : number) => this.props.addPlanQuantity(id); 
@@ -117,4 +117,4 @@ const mapDispatchToProps = (dispatch: any) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Plan);
+export default connect(mapStateToProps, mapDispatchToProps)(Planner);

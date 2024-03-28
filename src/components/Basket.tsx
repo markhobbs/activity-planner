@@ -12,9 +12,8 @@ class Basket extends Component<IBasketProps>{
     render() { 
         return(  
             <IconButton 
-                aria-label="plan" 
+                aria-label="planner" 
                 style={{ 
-                    display: 'none', 
                     padding: "0", 
                     color: "white" 
                 }}>

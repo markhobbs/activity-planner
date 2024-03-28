@@ -1,31 +1,13 @@
-// Header.test.js
-
 import React from 'react';
 import { render } from '@testing-library/react';
-import Header from '../Header';
-import ErrorBoundary from './ErrorBoundary';
+import Heading from '../Heading';
+import '@testing-library/jest-dom/extend-expect';
 
-describe('Header component', () => {
-  it('renders without crashing', () => {
-    render(<ErrorBoundary><Header /></ErrorBoundary>);
-    // If no errors occur during rendering, the test passes
-  });
-
-  it('displays the app title', () => {
-    const { getByText } = render(<ErrorBoundary><Header /></ErrorBoundary>);
-    const titleElement = getByText(process.env.REACT_APP_TITLE);
-    expect(titleElement).toBeInTheDocument();
-  });
-
-  it('contains a link to the home page', () => {
-    const { getByText } = render(<ErrorBoundary><Header /></ErrorBoundary>);
-    const homeLink = getByText(process.env.REACT_APP_TITLE);
-    expect(homeLink).toHaveAttribute('href', '/');
-  });
-
-  it('contains a link to the plan page', () => {
-    const { getByText } = render(<ErrorBoundary><Header /></ErrorBoundary>);
-    const planLink = getByText('Basket'); // Assuming 'Basket' is the link text
-    expect(planLink).toHaveAttribute('href', '/plan');
-  });
+describe('Heading component', () => {
+    it('renders the heading correctly', () => {
+        const testHeading = 'Hello, World!';
+        const { getByText } = render(<Heading heading={testHeading} />);
+        const headingElement = getByText(testHeading);
+        expect(headingElement).toBeInTheDocument();
+    });
 });

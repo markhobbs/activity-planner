@@ -19,7 +19,7 @@ const Header: React.FC = () => {
           <Opacity />
           {process.env.REACT_APP_TITLE}
         </Link>
-        <Link to="/plan" className="right">
+        <Link to="/planner" className="right">
           <Basket />
         </Link>
       </Logo>
