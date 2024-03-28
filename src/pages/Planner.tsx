@@ -9,6 +9,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import RotateLeftIcon from '@mui/icons-material/RotateLeft';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import styled from 'styled-components';
 
 interface IPlanProps {
     items: string[];
@@ -17,6 +18,11 @@ interface IPlanProps {
     subtractPlanQuantity: (id: number) => void;
     addPlanQuantity: (id: number) => void;    
 }
+
+const StyledPlanner = styled.main`
+    margin: 0 auto;
+    padding: 0 10px;
+`;
 
 class Planner extends React.Component<IPlanProps> {
     handleRemove = (id : number) => this.props.removePlanItem(id); 
@@ -40,7 +46,7 @@ class Planner extends React.Component<IPlanProps> {
                     <div 
                         className="item-image">
                         <h6>{item.title}</h6>
-                        <img src={item.img} alt={item.title} />
+                        {/*<img src={item.img} alt={item.title} />*/}
                     </div>
                     <div 
                         className="item-quantity">
@@ -92,13 +98,16 @@ class Planner extends React.Component<IPlanProps> {
         );
 
         return(
-            <div className="container">  
+            <StyledPlanner>
                 <Heading heading={ str_plan_heading } />
                 <ul className="collection center"> 
                     { addedItems } 
                 </ul>
                 <a className="right" href="/" onClick={ () => this.reset() }>RESET <RotateLeftIcon /></a>
-            </div>
+                <p>
+                    Return to <Link to="/">{ process.env.REACT_APP_ACTIVATIES_HEADING }</Link> or <Link to="/planner">{ process.env.REACT_APP_PLAN_HEADING }</Link> Page
+                </p>
+            </StyledPlanner>
         )}
 }
 

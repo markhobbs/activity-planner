@@ -17,7 +17,7 @@ const About: React.FC = () => {
     }, [])
 
     return (
-        <StyledAbout >
+        <StyledAbout>
             <Heading heading={ str_activities_heading } />
             <p>{ process.env.REACT_APP_ABOUT_SUMMARY }</p>
             <p>{ process.env.REACT_APP_ABOUT_FEATURES }</p>

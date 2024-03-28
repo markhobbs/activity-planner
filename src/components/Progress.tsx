@@ -8,9 +8,17 @@ interface IProgressProps {
     addedItems: string[];
 }
 
-const StyledRewards = styled.div`
+const StyledProgress = styled.section`
+    background-color: rgba(3, 155, 229, .8);
+    bottom: 0;
+    color: white;      
     margin: 0 auto;
-    padding: 0 10px;    
+    padding: 0 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+`
+const StyledRewards = styled.div` 
 `
 
 class Progress extends Component<IProgressProps> { 
@@ -21,7 +29,7 @@ class Progress extends Component<IProgressProps> {
         let modifier = 'plan-progress ' + mod1 + ' ' + mod2;
         let isPercentageNan = isNaN(percentage) ? true: false;
         return (
-            <section className={modifier}>
+            <StyledProgress className={modifier}>
                 { isPercentageNan || 
                     <StyledRewards>
                         <h5>
@@ -33,7 +41,7 @@ class Progress extends Component<IProgressProps> {
                         </h6>
                     </StyledRewards>
                 }
-            </section>
+            </StyledProgress>
         )
     }
 }

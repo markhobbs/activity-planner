@@ -120,13 +120,13 @@ class Scorecard extends Component<IScorecardProps> {
         });
 
         return(
-            <div className="container">
+            <>
                 <Heading heading = { str_scorecard_summary } />
                 <p>{ process.env.REACT_APP_SCORECARD_SUMMARY }</p>
                 <ul className="score-list">
                     { scores }
                 </ul>
-            </div>
+            </>
         );
     }
 }

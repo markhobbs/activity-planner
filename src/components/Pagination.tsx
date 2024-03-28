@@ -47,8 +47,7 @@ const Pagination = <T extends unknown>({
             <div className="pagination">
                 <button
                     onClick={goToPreviousPage}
-                    className={`prev ${currentPage === 1 ? "disabled" : ""}`}
-                >
+                    className={`prev ${currentPage === 1 ? "disabled" : ""}`}>
                     prev
                 </button>
                 {getPaginationGroup().map((item) => (
@@ -58,8 +57,8 @@ const Pagination = <T extends unknown>({
                         className={`paginationItem ${
                             currentPage === item ? "active" : ""
                         }`}
-                    >
-                        <span>{item}</span>
+                        >
+                        <span>{ item }</span>
                     </button>
                 ))}
                 <button
@@ -69,9 +68,12 @@ const Pagination = <T extends unknown>({
                     next
                 </button>
             </div>
-            <div className="dataContainer">
+            <div>
                 {getPaginatedData().map((d, idx) => (
-                    <RenderComponent key={idx} data={d} />
+                    <RenderComponent 
+                        key={idx} 
+                        data={d} 
+                    />
                 ))}
             </div>
         </>

@@ -5,10 +5,16 @@ import { addPlanItem} from '../redux/actions/planActions';
 import Heading from '../components/Heading';
 import ColorChoice from '../components/ColorChoice';
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
+import styled from 'styled-components';
 
 interface IAwardsProps {
     score: number[];
 }
+
+const StyledAwards= styled.main`
+    margin: 0 auto;
+    padding: 0 10px;
+`;
 
 class Awards extends Component<IAwardsProps> {
     componentDidMount() {
@@ -90,21 +96,30 @@ class Awards extends Component<IAwardsProps> {
         });
 
         return(
-            <div className="container">
+            <StyledAwards>
                 <Heading heading={ str_awards_heading } />
-                <p>{process.env.REACT_APP_AWARDS_SUMMARY}</p>
+                <p>{ process.env.REACT_APP_AWARDS_SUMMARY }</p>
+                
                 { scores.length ? 
                 <ul className="score-list">
-                    {scores}
-                </ul> 
+                    { scores }
+                </ul>
                 : 
                 <ul className="collection center">
                     <li className="collection-item">
-                        <p>{process.env.REACT_APP_EMPTY_AWARDS}. Return to <Link to="/plan">{process.env.REACT_APP_PLAN_HEADING}</Link> Page</p>
+                        <p>
+                            { process.env.REACT_APP_EMPTY_AWARDS }. Return to 
+                            <Link to="/planner">
+                            { process.env.REACT_APP_PLAN_HEADING }
+                            </Link> Page
+                        </p>
                     </li>
                 </ul> 
                 }
-            </div>
+                <p>
+                    Return to <Link to="/">{ process.env.REACT_APP_ACTIVATIES_HEADING }</Link> or <Link to="/planner">{ process.env.REACT_APP_PLAN_HEADING }</Link> Page
+                </p>
+            </StyledAwards>
         );
     }
 }

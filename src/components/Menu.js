@@ -103,7 +103,7 @@ const MenuItems = ({ open, setOpen }) => {
   return (
     <StyledMenu open={open} onClick={() => setOpen(!open)}>
       <Link to="/">Activitys</Link>
-      <Link to="/plan">Planner</Link>
+      <Link to="/planner">Planner</Link>
       <Link to="/awards">Awards</Link>
       <Link to="/about"><small>About</small></Link>
       <Link to="/paginated"><small>Paginated</small></Link>

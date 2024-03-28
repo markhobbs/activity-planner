@@ -4,7 +4,7 @@ import Card from '../components/Card';
 import Heading from '../components/Heading';
 import styled from 'styled-components';
 
-const StyledActivity = styled.div`
+const StyledActivity = styled.main`
     margin: 0 auto;
     padding: 0 10px;
 `
@@ -40,7 +40,7 @@ class Activity extends Component<IActivityProps>  {
         });
 
         return(
-            <StyledActivity >
+            <StyledActivity>
                 <Heading heading={ str_activities_heading } />
                 <StyledActivityList>{ cardItems }</StyledActivityList>
             </StyledActivity>

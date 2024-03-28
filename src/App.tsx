@@ -22,7 +22,7 @@ class App extends Component {
               <Route path="/" component={ Activity } exact />
               <Route path="/paginated" component={ Paginated }/>
               <Route path="/index_react.html" component={ Activity }/>
-              <Route path="/plan" component={ Planner }/>
+              <Route path="/planner" component={ Planner }/>
               <Route path="/store" component={ Store }/>
               <Route path="/awards" component={ Awards }/>
             </Switch>
