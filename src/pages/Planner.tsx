@@ -42,27 +42,27 @@ class Planner extends React.Component<IPlanProps> {
         const str_plan_heading = String(process.env.REACT_APP_PLAN_HEADING);
         let addedItems = this.props.items.length ? (this.props.items.map((item: any)=> {
             return (
-                <li className="collection-item" key={item.id}>
+                <li className="collection-item" key={ item.id }>
                     <div 
                         className="item-image">
-                        <h6>{item.title}</h6>
+                        <h6>{ item.title }</h6>
                         {/*<img src={item.img} alt={item.title} />*/}
                     </div>
                     <div 
                         className="item-quantity">
-                        <p>{item.rep} 
-                            <sup>rep(s)</sup> {item.quantity} 
+                        <p>{ item.rep } 
+                            <sup>rep(s)</sup> { item.quantity } 
                             <sup>set(s)</sup>
                         </p>
                         <Button 
-                            disabled={item.completed} 
+                            disabled={ item.completed } 
                             startIcon={<RemoveCircleOutlineIcon />} 
                             onClick = { () => { 
                                 this.handleSubtractQuantity(item.id) 
                             }}>
                         </Button>
                         <Button 
-                            disabled={item.completed} 
+                            disabled={ item.completed } 
                             startIcon={<AddCircleOutlineIcon />} 
                             onClick = { () => { 
                                 this.handleAddQuantity(item.id) 
@@ -77,7 +77,7 @@ class Planner extends React.Component<IPlanProps> {
                             color="primary" 
                             startIcon={<AlarmOnIcon />} 
                             onClick={()=>{this.handleComplete(item.id)}}>
-                            {item.completed ? "Completed": "Complete" }
+                            { item.completed ? "Completed": "Complete" }
                         </Button>&nbsp;
                         <Button 
                             variant="contained" 
@@ -86,14 +86,14 @@ class Planner extends React.Component<IPlanProps> {
                             onClick = { () => { 
                                 this.handleRemove(item.id) 
                             }}>
-                            {process.env.REACT_APP_DELETE_ACTIVITY}
+                            { process.env.REACT_APP_DELETE_ACTIVITY }
                         </Button>
                     </div>
                 </li>)
             })
         ):(
             <li className="collection-item">
-                <p>{process.env.REACT_APP_EMPTY_ACTIVITY}. Return to <Link to="/">{process.env.REACT_APP_ACTIVATIES_HEADING}</Link> Page</p>
+                <p>{ process.env.REACT_APP_EMPTY_ACTIVITY }.</p>
             </li>
         );
 
@@ -103,7 +103,11 @@ class Planner extends React.Component<IPlanProps> {
                 <ul className="collection center"> 
                     { addedItems } 
                 </ul>
-                <a className="right" href="/" onClick={ () => this.reset() }>RESET <RotateLeftIcon /></a>
+                <a 
+                    className="right" href="/" 
+                    onClick={ () => this.reset() }>
+                    RESET <RotateLeftIcon />
+                </a>
                 <p>
                     Return to <Link to="/">{ process.env.REACT_APP_ACTIVATIES_HEADING }</Link> or <Link to="/planner">{ process.env.REACT_APP_PLAN_HEADING }</Link> Page
                 </p>

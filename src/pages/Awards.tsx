@@ -108,10 +108,7 @@ class Awards extends Component<IAwardsProps> {
                 <ul className="collection center">
                     <li className="collection-item">
                         <p>
-                            { process.env.REACT_APP_EMPTY_AWARDS }. Return to 
-                            <Link to="/planner">
-                            { process.env.REACT_APP_PLAN_HEADING }
-                            </Link> Page
+                            { process.env.REACT_APP_EMPTY_AWARDS }. 
                         </p>
                     </li>
                 </ul> 
