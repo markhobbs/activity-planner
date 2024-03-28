@@ -14,10 +14,14 @@ interface ICardActionsProps {
   completed?: boolean;
 }
 
-interface ICardActionsState {
-}
+const Card = styled.div`
+  padding: 12px 24px;
+  > button {
+    margin-right: 12px;
+  }
+`
 
-class CardActions extends Component<ICardActionsProps, ICardActionsState> {
+class CardActions extends Component<ICardActionsProps> {
   handleAddPlan = (id: number) => { this.props.addPlanItem(id) }
   handlePurchase = (id: number) => { console.log('Send all kit items to store basket', id) }
   render () {
@@ -63,12 +67,5 @@ const mapDispatchToProps = (dispatch: (arg0: { type: string; id: number; }) => v
     }
   };
 }
-
-const Card = styled.div`
-  padding: 12px 24px;
-  > button {
-    margin-right: 12px;
-  }
-`
 
 export default connect( null, mapDispatchToProps)(CardActions);

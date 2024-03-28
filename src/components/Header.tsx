@@ -5,27 +5,26 @@ import Basket from  './Basket';
 import Menu from '../components/Menu';
 import styled from 'styled-components';
 
-
+const StyledHeader = styled.header``;
+const Logo = styled.div`
+    text-align: right;
+    padding: 1rem 1rem;
+`
 const Header: React.FC = () => {
   return (
-    <Wrapper>
+    <StyledHeader>
       <Menu />
       <Logo>
         <Link to="/" className="logo">
-          <Opacity />{process.env.REACT_APP_TITLE}
+          <Opacity />
+          {process.env.REACT_APP_TITLE}
         </Link>
         <Link to="/plan" className="right">
           <Basket />
         </Link>
       </Logo>
-    </Wrapper>
+    </StyledHeader>
   );
 };
-
-const Wrapper = styled.header``;
-const Logo = styled.div`
-    text-align: right;
-    padding: 1rem 1rem;
-`
 
 export default Header;

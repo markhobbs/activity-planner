@@ -33,6 +33,7 @@ class Plan extends React.Component<IPlanProps> {
     };
 
     render() { 
+        const str_plan_heading = String(process.env.REACT_APP_PLAN_HEADING);
         let addedItems = this.props.items.length ? (this.props.items.map((item: any)=> {
             return (
                 <li className="collection-item" key={item.id}>
@@ -92,7 +93,7 @@ class Plan extends React.Component<IPlanProps> {
 
         return(
             <div className="container">  
-                <Heading heading ={ process.env.REACT_APP_PLAN_HEADING } />
+                <Heading heading={ str_plan_heading } />
                 <ul className="collection center"> 
                     { addedItems } 
                 </ul>

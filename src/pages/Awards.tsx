@@ -15,6 +15,7 @@ class Awards extends Component<IAwardsProps> {
         window.scrollTo(0, 0)
     }
     render() {
+        const str_awards_heading = String(process.env.REACT_APP_AWARDS_HEADING);
         let scores = this.props.score.map( (score : any, iKey=-1 ) => {
             iKey++;
             return (
@@ -87,9 +88,10 @@ class Awards extends Component<IAwardsProps> {
                 </li>
             )
         });
+
         return(
             <div className="container">
-                <Heading heading = {process.env.REACT_APP_AWARDS_HEADING} />
+                <Heading heading={ str_awards_heading } />
                 <p>{process.env.REACT_APP_AWARDS_SUMMARY}</p>
                 { scores.length ? 
                 <ul className="score-list">

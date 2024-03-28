@@ -2,17 +2,11 @@ import React, { useEffect, useState } from "react";
 import Pagination from '../components/Pagination';
 import Post from '../components/Post';
 import Link from '../components/Link';
-import Toggle from '../components/Toggle';
-import Switch from '../components/Switch';
-const url = '/static/posts.json';
 
-function App() {
+const url = '/static/posts.json';
+const App: React.FC = () => {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState("");
-
-  const goToNextPage = () => {
-    console.log("changed");
-  }
   
   useEffect(() => {
     fetch(url)
@@ -37,12 +31,6 @@ function App() {
             pageLimit={5}
             dataLimit={10}
           />
-          <Toggle 
-            onChange={ goToNextPage } 
-            data-testid="toggle" />
-          <Switch 
-            onChange={ goToNextPage } 
-            data-testid="switch" />
           <Link 
             page="/plan" 
             children="View Planner" 

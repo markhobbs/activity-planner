@@ -8,8 +8,8 @@ const STATUS = {
 
 // Props interface for the Link component
 interface ILinkProps {
-  page?: string;
-  children?: React.ReactNode;
+  page: string;
+  children: React.ReactNode;
 }
 
 // State interface for the Link component
@@ -44,7 +44,10 @@ class Link extends React.Component<ILinkProps, ILinkState> {
     const { linkStatus } = this.state;
 
     return (
-      <a className={linkStatus} href={page || '#'} onMouseEnter={this._onMouseEnter}
+      <a 
+        className={linkStatus} 
+        href={page || '#'} 
+        onMouseEnter={this._onMouseEnter}
         onMouseLeave={this._onMouseLeave}
       >
         {children}

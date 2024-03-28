@@ -1,45 +1,6 @@
 import React from "react";
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
-
-const Burger = ({ open, setOpen }) => {
-  return (
-    <StyledBurger open={open} onClick={() => setOpen(!open)}>
-      <div />
-      <div />
-      <div />
-    </StyledBurger>
-  )
-}
-
-const MenuItems = ({ open, setOpen }) => {
-
-  return (
-    <StyledMenu open={open} onClick={() => setOpen(!open)}>
-      <Link to="/">Activitys</Link>
-      <Link to="/plan">Planner</Link>
-      <Link to="/awards">Awards</Link>
-      <hr />
-      <p>
-        <Link to="/about"><small>About</small></Link> :: <Link to="/paginated"><small>Paginated</small></Link>
-      </p>
-      </StyledMenu>
-  )
-}
-
-const Menu = () => {
-  const [open, setOpen] = React.useState(false);
-  const node = React.useRef();
-  return (
-    <div data-testid="menu">
-      <div ref={node}>
-        <Burger open={open} setOpen={setOpen} />
-        <MenuItems open={open} setOpen={setOpen} />
-      </div>
-    </div>
-  )  
-}
+import styled from 'styled-components';
 
 const StyledMenu = styled.nav`
   z-index: 2;
@@ -127,5 +88,40 @@ const StyledBurger = styled.button`
     }
   }
 `
+
+const Burger = ({ open, setOpen }) => {
+  return (
+    <StyledBurger open={open} onClick={() => setOpen(!open)}>
+      <div />
+      <div />
+      <div />
+    </StyledBurger>
+  )
+}
+
+const MenuItems = ({ open, setOpen }) => {
+  return (
+    <StyledMenu open={open} onClick={() => setOpen(!open)}>
+      <Link to="/">Activitys</Link>
+      <Link to="/plan">Planner</Link>
+      <Link to="/awards">Awards</Link>
+      <Link to="/about"><small>About</small></Link>
+      <Link to="/paginated"><small>Paginated</small></Link>
+      </StyledMenu>
+  )
+}
+
+const Menu = () => {
+  const [open, setOpen] = React.useState(false);
+  const node = React.useRef();
+  return (
+    <div data-testid="menu">
+      <div ref={node}>
+        <Burger open={open} setOpen={setOpen} />
+        <MenuItems open={open} setOpen={setOpen} />
+      </div>
+    </div>
+  )  
+}
 
 export default Menu;

@@ -9,7 +9,7 @@ import Plan from './pages/Plan';
 import Store from './pages/Store';
 import Awards from './pages/Awards';
 import Footer from './components/Footer';
-import PlanProgress from './components/PlanProgress';
+import Progress from './components/Progress';
 
 class App extends Component {
   render() {
@@ -17,6 +17,7 @@ class App extends Component {
       <BrowserRouter>
         <React.StrictMode>
             <Header/>
+            <Progress />
             <Switch>
               <Route path="/about" component={About}/>
               <Route exact path="/" component={Activity}/>
@@ -26,7 +27,6 @@ class App extends Component {
               <Route path="/store" component={Store}/>
               <Route path="/awards" component={Awards}/>
             </Switch>
-            <PlanProgress />
             <Footer />
           </React.StrictMode>
       </BrowserRouter>

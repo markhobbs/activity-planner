@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 
-interface IPlanProgressProps {
+interface IProgressProps {
     total: string;
     totalCompleted: string;
     addedItems: string[];
 }
 
-class PlanProgress extends Component<IPlanProgressProps> { 
+const StyledRewards = styled.div`
+    margin: 0 auto;
+    padding: 0 10px;    
+`
+
+class Progress extends Component<IProgressProps> { 
     render() {
         let percentage = parseInt(this.props.totalCompleted)/parseInt(this.props.total)*100;
         let mod1 = (percentage >= 0) ? 'plan-progress--active' : '';
@@ -17,7 +23,7 @@ class PlanProgress extends Component<IPlanProgressProps> {
         return (
             <section className={modifier}>
                 { isPercentageNan || 
-                    <div className="container">
+                    <StyledRewards>
                         <h5>
                             { this.props.addedItems.length }
                             <sup> activity(s)</sup> { this.props.total } <sup> rep(s) </sup>
@@ -25,7 +31,7 @@ class PlanProgress extends Component<IPlanProgressProps> {
                         <h6>
                             <span>Progress : {percentage} <sup>&#37;</sup></span>
                         </h6>
-                    </div>
+                    </StyledRewards>
                 }
             </section>
         )
@@ -40,4 +46,4 @@ const mapStateToProps = (state : any) => {
     }
 }
 
-export default connect(mapStateToProps)(PlanProgress);
+export default connect(mapStateToProps)(Progress);

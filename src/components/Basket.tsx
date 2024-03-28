@@ -5,13 +5,19 @@ import IconButton from '@mui/material/IconButton';
 import DirectionsRun from '@mui/icons-material/DirectionsRun';
 
 interface IBasketProps {
-    items?: any;
+    items: number;
 }
 
 class Basket extends Component<IBasketProps>{
     render() { 
         return(  
-            <IconButton aria-label="plan" style={{ display: 'none', padding: "0", color: "white" }}>
+            <IconButton 
+                aria-label="plan" 
+                style={{ 
+                    display: 'none', 
+                    padding: "0", 
+                    color: "white" 
+                }}>
                 <DirectionsRun  />
             </IconButton>
         )    

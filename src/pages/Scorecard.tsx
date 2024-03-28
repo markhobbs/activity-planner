@@ -11,10 +11,12 @@ interface IScorecardProps {
     scoreGroups: any;
 }
 class Scorecard extends Component<IScorecardProps> {
+    
     componentDidMount () {
         window.scrollTo(0, 0)
     }
     render () {
+        const str_scorecard_summary = String(process.env.REACT_APP_SCORECARD_SUMMARY);
         let scores = this.props.score.map( (score : any, iKey=0 ) => {
             let scoreGroups = this.props.scoreGroups.map( (scoreGroup : any, lkey=0 ) => {
                 if (score[0] && scoreGroup[0] === score[0][0]) {
@@ -119,7 +121,7 @@ class Scorecard extends Component<IScorecardProps> {
 
         return(
             <div className="container">
-                <Heading heading = { process.env.REACT_APP_SCORECARD_HEADING } />
+                <Heading heading = { str_scorecard_summary } />
                 <p>{ process.env.REACT_APP_SCORECARD_SUMMARY }</p>
                 <ul className="score-list">
                     { scores }

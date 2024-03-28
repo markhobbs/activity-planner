@@ -1,11 +1,15 @@
 import React from "react";
 import ColorChoice from './ColorChoice';
-import styled from 'styled-components';
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
+import styled from 'styled-components';
 
 interface propsCast {
     items: any[];
 }
+
+const StyledRewards = styled.div`
+  padding: 12px 24px;
+`
 
 const Rewards = ( props: propsCast ) => {
     let rewardLabel : string;
@@ -19,13 +23,13 @@ const Rewards = ( props: propsCast ) => {
         }
         key++;
         return (
-            <Wrapper 
+            <StyledRewards 
                 key={key} 
                 className="reward_chip"
                 style={{
                     backgroundColor: ColorChoice(rewardValue)
                 }}><AccessibilityNewIcon />{chipLabel}
-            </Wrapper>
+            </StyledRewards>
         );
     });
     return ( 
@@ -34,9 +38,5 @@ const Rewards = ( props: propsCast ) => {
         </div> 
     )
 };
-
-const Wrapper = styled.div`
-  padding: 12px 24px;
-`
  
 export default Rewards;
