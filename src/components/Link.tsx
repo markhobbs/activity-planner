@@ -1,54 +1,45 @@
-import React from 'react';
+import React, { Component, MouseEvent } from 'react';
 
-// Define possible states for the link
-const STATUS = {
-  HOVERED: 'hovered',
-  NORMAL: 'normal',
-};
+enum STATUS {
+  HOVERED = 'hovered',
+  NORMAL = 'normal',
+}
 
-// Props interface for the Link component
 interface ILinkProps {
   page: string;
   children: React.ReactNode;
 }
 
-// State interface for the Link component
 interface ILinkState {
-  linkStatus: string;
+  linkStatus: STATUS;
 }
 
-class Link extends React.Component<ILinkProps, ILinkState> {
+class Link extends Component<ILinkProps, ILinkState> {
   constructor(props: ILinkProps) {
     super(props);
-
-    this._onMouseEnter = this._onMouseEnter.bind(this);
-    this._onMouseLeave = this._onMouseLeave.bind(this);
-
     this.state = {
       linkStatus: STATUS.NORMAL,
     };
   }
 
-  // Event handler for mouse enter
-  _onMouseEnter() {
+  handleMouseEnter = () => {
     this.setState({ linkStatus: STATUS.HOVERED });
-  }
+  };
 
-  // Event handler for mouse leave
-  _onMouseLeave() {
+  handleMouseLeave = () => {
     this.setState({ linkStatus: STATUS.NORMAL });
-  }
+  };
 
   render() {
     const { page, children } = this.props;
     const { linkStatus } = this.state;
 
     return (
-      <a 
-        className={linkStatus} 
-        href={page || '#'} 
-        onMouseEnter={this._onMouseEnter}
-        onMouseLeave={this._onMouseLeave}
+      <a
+        className={linkStatus}
+        href={page || '#'}
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
       >
         {children}
       </a>

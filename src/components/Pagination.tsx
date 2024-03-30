@@ -13,8 +13,9 @@ const Pagination = <T extends unknown>({
     RenderComponent,
     title,
     pageLimit,
-    dataLimit,
+    dataLimit
 }: IPaginationProps<T>) => {
+
     const [pages] = useState(Math.round(data.length / dataLimit));
     const [currentPage, setCurrentPage] = useState(1);
 

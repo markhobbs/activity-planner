@@ -5,14 +5,10 @@ interface IImageProps {
   src: string;
 }
 
-class Image extends React.Component<IImageProps> {
-  render () {
-    let alt = this.props.alt;
-    let src = this.props.src;
-    return (
-      <img alt={alt} src={src} srcSet={`${src} 300w, ${src} 768w, ${src} 1280w`} />
-    );
-  }
-}
+const Image: React.FC<IImageProps> = ({ alt, src }) => {
+  return (
+    <img alt={alt} src={src} srcSet={`${src} 300w, ${src} 768w, ${src} 1280w`} />
+  );
+};
 
 export default Image;
