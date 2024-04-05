@@ -1,4 +1,3 @@
-
 export const ADD_PLAN_ITEM = 'ADD_PLAN_ITEM';
 export const REMOVE_PLAN_ITEM = 'REMOVE_PLAN_ITEM';
 export const COMPLETE_PLAN_ITEM = 'COMPLETE_PLAN_ITEM';

@@ -7,12 +7,6 @@ import Button from '@mui/material/Button';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import styled from 'styled-components';
 
-interface ICardActionsProps {
-  actionID?: any;
-  kit?: string;
-  addPlanItem: any
-  completed?: boolean;
-}
 
 const Card = styled.div`
   padding: 12px 24px;
@@ -20,6 +14,13 @@ const Card = styled.div`
     margin-right: 12px;
   }
 `
+
+interface ICardActionsProps {
+  actionID?: any;
+  kit?: string;
+  addPlanItem: any
+  completed?: boolean;
+}
 
 class CardActions extends Component<ICardActionsProps> {
   handleAddPlan = (id: number) => { this.props.addPlanItem(id) }
@@ -68,4 +69,7 @@ const mapDispatchToProps = (dispatch: (arg0: { type: string; id: number; }) => v
   };
 }
 
-export default connect( null, mapDispatchToProps)(CardActions);
+export default connect( 
+  null, 
+  mapDispatchToProps
+)(CardActions);

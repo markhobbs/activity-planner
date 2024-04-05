@@ -1,15 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Opacity from '@mui/icons-material/Opacity';
 import Basket from  './Basket';
 import Menu from '../components/Menu';
+import Opacity from '@mui/icons-material/Opacity';
 import styled from 'styled-components';
 
-const StyledHeader = styled.header``;
+
 const Logo = styled.div`
     text-align: right;
     padding: 1rem 1rem;
 `
+const StyledHeader = styled.header`
+`;
+
 const Header: React.FC = () => {
   return (
     <StyledHeader>

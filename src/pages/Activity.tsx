@@ -3,25 +3,25 @@ import { connect } from 'react-redux';
 import Card from '../components/Card';
 import Heading from '../components/Heading';
 import styled from 'styled-components';
+import { MainContainer } from '../styles';
 
-const StyledActivity = styled.main`
-    margin: 0 auto;
-    padding: 0 10px;
-`
+
 const StyledActivityList = styled.ul`
     @media (min-width: 600px) {
+        align-items: baseline;
         display: flex;
         flex-wrap: wrap;
-        gap: 5px;
-        align-items: baseline;
-      
+        gap: 2px;
         li {
             width: 33%;
             display: flex;
-            flex-grow   grow;
+            flex-grow: grow;
             flex-direction: column;
             > div {
                 width: 100%;
+            }
+            img {
+                width:100%;
             }
         }
     }
@@ -38,12 +38,11 @@ class Activity extends Component<IActivityProps>  {
         let cardItems = this.props.items.map( (item, ikey)  => {
             return (<Card key={ikey} item={item} />)
         });
-
         return(
-            <StyledActivity>
+            <MainContainer>
                 <Heading heading={ str_activities_heading } />
                 <StyledActivityList>{ cardItems }</StyledActivityList>
-            </StyledActivity>
+            </MainContainer>
         );
     }
 }

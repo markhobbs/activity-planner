@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { removePlanItem, completePlanItem, addPlanQuantity, subtractPlanQuantity} from '../redux/actions/planActions';
-import IconButton from '@mui/material/IconButton';
+import { removePlanItem, completePlanItem, addPlanQuantity, subtractPlanQuantity } from '../redux/actions/planActions';
 import DirectionsRun from '@mui/icons-material/DirectionsRun';
+import IconButton from '@mui/material/IconButton';
+
 
 interface IBasketProps {
     items: number;
@@ -41,8 +42,12 @@ const mapDispatchToProps = (dispatch: any)=>{
             dispatch(addPlanQuantity(id))
         },
         subtractPlanQuantity: (id : number) => {
-            dispatch(subtractPlanQuantity(id))}
+            dispatch(subtractPlanQuantity(id))
+        }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Basket);
+export default connect(
+    mapStateToProps, 
+    mapDispatchToProps
+)(Basket);

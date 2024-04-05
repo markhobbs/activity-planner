@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 const StyledFooter = styled.footer`
-    text-align: center
+    text-align: center;
 `;
 
 const Footer: React.FC = () => {

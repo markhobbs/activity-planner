@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 
+
 const StyledBurger = styled.button<{ open: boolean }>`
   position: absolute;
   top: 1rem;

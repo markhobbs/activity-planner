@@ -1,30 +1,27 @@
-import React, {useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import Heading from '../components/Heading';
-import styled from 'styled-components';
+import LinkList from '../components/LinkList';
+import { MainContainer } from '../styles';
 
-
-const StyledAbout = styled.main`
-    margin: 0 auto;
-    padding: 0 10px;
-`;
 
 const About: React.FC = () => {
-    const str_activities_heading = String(process.env.REACT_APP_ACTIVATIES_HEADING);
-
+    const heading = String(process.env.REACT_APP_ABOUT_HEADING);
+    const linkText = String(process.env.REACT_APP_ACTIVATIES_HEADING);
+    const summary = String(process.env.REACT_APP_ABOUT_SUMMARY);
+    const features = String(process.env.REACT_APP_ABOUT_FEATURES);
+    
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
-
+    
     return (
-        <StyledAbout>
-            <Heading heading={ str_activities_heading } />
-            <p>{ process.env.REACT_APP_ABOUT_SUMMARY }</p>
-            <p>{ process.env.REACT_APP_ABOUT_FEATURES }</p>
-            <p>Return to <Link to="/">{ process.env.REACT_APP_ACTIVATIES_HEADING }</Link> Page</p>
-        </StyledAbout>
+        <MainContainer>
+            <Heading heading={ heading } />
+            <p>{ summary  }</p>
+            <p>{ features }</p>
+            <LinkList />
+        </MainContainer>
     )
 }
-
 
 export default About;

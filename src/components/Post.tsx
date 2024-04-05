@@ -1,4 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
+
+
+const StyledPost = styled.section`
+    font-size: 2em;
+    margin: 12px 0;
+`;
 
 interface IPostProps {
   data: any;
@@ -6,12 +13,11 @@ interface IPostProps {
 
 const Post: React.FC<IPostProps> = (props) => {
   const { title, headline } = props.data;
-  
   return (
-    <div className="post">
+    <StyledPost>
       <h3>{ title }</h3>
       <p>{ headline }</p>
-    </div>
+    </StyledPost>
   );
 }
 

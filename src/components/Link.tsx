@@ -1,4 +1,5 @@
-import React, { Component, MouseEvent } from 'react';
+import React, { Component } from 'react';
+
 
 enum STATUS {
   HOVERED = 'hovered',
@@ -33,15 +34,13 @@ class Link extends Component<ILinkProps, ILinkState> {
   render() {
     const { page, children } = this.props;
     const { linkStatus } = this.state;
-
     return (
       <a
-        className={linkStatus}
-        href={page || '#'}
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
-      >
-        {children}
+        className={ linkStatus }
+        href={ page || '#' }
+        onMouseEnter={ this.handleMouseEnter }
+        onMouseLeave={ this.handleMouseLeave }>
+        { children }
       </a>
     );
   }

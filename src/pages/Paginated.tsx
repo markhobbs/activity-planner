@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
+import Link from '../components/Link';
+import LinkList from '../components/LinkList';
 import Pagination from '../components/Pagination';
 import Post from '../components/Post';
-import Link from '../components/Link';
-import styled from 'styled-components';
-
+import { MainContainer } from '../styles';
 const url = '/static/posts.json';
-
-const StyledPaginated = styled.main`
-    margin: 0 auto;
-    padding: 0 10px;
-`;
 
 const Paginated: React.FC = () => {
   const [posts, setPosts] = useState([]);
@@ -28,7 +23,7 @@ const Paginated: React.FC = () => {
   if (error) return <h1>{error}</h1>;
 
   return (
-    <StyledPaginated>
+    <MainContainer>
       {posts.length > 0 ? (
         <>
           <Pagination
@@ -38,15 +33,12 @@ const Paginated: React.FC = () => {
             pageLimit={5}
             dataLimit={10}
           />
-          <Link 
-            page="/planner" 
-            children="View Planner" 
-          />
         </>
       ) : (
         <h1>No Posts to display</h1>
       )}
-    </StyledPaginated>
+      <LinkList />
+    </MainContainer>
   );
 }
 

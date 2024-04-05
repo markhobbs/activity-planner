@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+
 const StyledMenu = styled.div<{ open: boolean }>`
   z-index: 2;
   display: flex;
@@ -52,8 +53,8 @@ const MenuItems: React.FC<IMenuItemsProps> = ({ open, setOpen }) => {
   return (
     <StyledMenu 
       data-testid="menu-items"
-      open={open} 
-      onClick={() => setOpen(!open)}
+      open={ open } 
+      onClick={ () => setOpen(!open) }
       >
         <Link to="/">Activitys</Link>
         <Link to="/planner">Planner</Link>

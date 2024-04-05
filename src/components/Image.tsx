@@ -1,5 +1,6 @@
 import React from "react";
 
+
 interface IImageProps {
   alt: string;
   src: string;

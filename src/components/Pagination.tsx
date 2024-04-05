@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 interface IPaginationProps<T> {
     data: T[];
     RenderComponent: React.FC<{ data: T }>;
