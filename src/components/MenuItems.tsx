@@ -51,16 +51,15 @@ interface IMenuItemsProps {
 
 const MenuItems: React.FC<IMenuItemsProps> = ({ open, setOpen }) => {
   return (
-    <StyledMenu 
+    <StyledMenu
       data-testid="menu-items"
-      open={ open } 
-      onClick={ () => setOpen(!open) }
-      >
-        <Link to="/">Activitys</Link>
-        <Link to="/planner">Planner</Link>
-        <Link to="/awards">Awards</Link>
-        <Link to="/about"><small>About</small></Link>
-        <Link to="/paginated"><small>Paginated</small></Link>
+      open={open}
+      onClick={() => setOpen(!open)}>
+      <Link to="/">Activitys</Link>
+      <Link to="/planner">Planner</Link>
+      <Link to="/awards">Awards</Link>
+      <Link to="/about"><small>About</small></Link>
+      {/* <Link to="/paginated"><small>Paginated</small></Link> */}
     </StyledMenu>
   );
 };
