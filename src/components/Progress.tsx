@@ -23,7 +23,7 @@ interface IProgressProps {
 
 class Progress extends Component<IProgressProps> { 
     render() {
-        let percentage = parseInt(this.props.totalCompleted) / parseInt(this.props.total) * 100;
+        let percentage = Math.ceil(parseInt(this.props.totalCompleted) / parseInt(this.props.total) * 100);
         let mod1 = (percentage >= 0) ? 'plan-progress--active' : '';
         let mod2 = (percentage === 100) ? 'plan-progress--completed' : '';
         let modifier = 'plan-progress ' + mod1 + ' ' + mod2;
