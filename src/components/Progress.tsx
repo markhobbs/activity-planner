@@ -37,7 +37,7 @@ class Progress extends Component<IProgressProps> {
                         { this.props.total } <sup> rep(s) </sup>
                     </h5> 
                     <h6>
-                        <span>Progress : { percentage } <sup>&#37;</sup></span>
+                        <span>Progress : { Math.ceil(percentage) } <sup>&#37;</sup></span>
                     </h6>
                 </StyledRewards> }
             </StyledProgress>
