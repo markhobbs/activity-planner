@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Link from '../components/Link';
-import LinkList from '../components/LinkList';
 import Pagination from '../components/Pagination';
 import Post from '../components/Post';
 import { MainContainer } from '../styles';
@@ -37,7 +35,6 @@ const Paginated: React.FC = () => {
       ) : (
         <h1>No Posts to display</h1>
       )}
-      <LinkList />
     </MainContainer>
   );
 }

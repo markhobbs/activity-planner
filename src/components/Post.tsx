@@ -7,11 +7,16 @@ const StyledPost = styled.section`
     margin: 12px 0;
 `;
 
-interface IPostProps {
-  data: any;
+interface PostProps {
+  data: Data;
 }
 
-const Post: React.FC<IPostProps> = (props) => {
+interface Data {
+  title: string;
+  headline: string;
+}
+
+const Post: React.FC<PostProps> = (props) => {
   const { title, headline } = props.data;
   return (
     <StyledPost>

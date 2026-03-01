@@ -6,17 +6,17 @@ enum STATUS {
   NORMAL = 'normal',
 }
 
-interface ILinkProps {
+interface LinkProps {
   page: string;
   children: React.ReactNode;
 }
 
-interface ILinkState {
+interface LinkState {
   linkStatus: STATUS;
 }
 
-class Link extends Component<ILinkProps, ILinkState> {
-  constructor(props: ILinkProps) {
+class Link extends Component<LinkProps, LinkState> {
+  constructor(props: LinkProps) {
     super(props);
     this.state = {
       linkStatus: STATUS.NORMAL,

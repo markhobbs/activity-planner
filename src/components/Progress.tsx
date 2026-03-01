@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 
 const StyledProgress = styled.section`
-    background-color: rgba(3, 155, 229, .8);
+    background-color: rgba(3, 155, 229, .9);
     bottom: 0;
     color: white;      
     margin: 0 auto;
@@ -12,44 +12,49 @@ const StyledProgress = styled.section`
     position: fixed;
     width: 100%;
     z-index: 1;
+    font-size: 1.8em;
 `
-const StyledRewards = styled.div``
+const StyledRewards = styled.p``
 
-interface IProgressProps {
+interface ProgressProps {
     total: string;
     totalCompleted: string;
     addedItems: string[];
 }
+interface RootState {
+    plan : Plan;
+}
+interface Plan {
+    addedItems: string[];
+    total: string;
+    totalCompleted: string;
+}
 
-class Progress extends Component<IProgressProps> { 
+class Progress extends Component<ProgressProps> { 
     render() {
-        let percentage = Math.ceil(parseInt(this.props.totalCompleted) / parseInt(this.props.total) * 100);
-        let mod1 = (percentage >= 0) ? 'plan-progress--active' : '';
-        let mod2 = (percentage === 100) ? 'plan-progress--completed' : '';
-        let modifier = 'plan-progress ' + mod1 + ' ' + mod2;
-        let isPercentageNan = isNaN(percentage) ? true: false;
+        const percentage = Math.ceil(parseInt(this.props.totalCompleted) / parseInt(this.props.total) * 100);
+        const mod1 = (percentage >= 0) ? 'plan-progress--active' : '';
+        const mod2 = (percentage === 100) ? 'plan-progress--completed' : '';
+        const modifier = `plan-progress ${mod1} ${mod2}`;
+        const isPercentageNan = isNaN(percentage) ? true: false;
 
         return (
             <StyledProgress className={modifier}>
-                { isPercentageNan || <StyledRewards>
-                    <h5>
-                        { this.props.addedItems.length } <sup> activity(s)</sup> 
-                        { this.props.total } <sup> rep(s) </sup>
-                    </h5> 
-                    <h6>
-                        <span>Progress : { percentage } <sup>&#37;</sup></span>
-                    </h6>
-                </StyledRewards> }
-            </StyledProgress>
-        )
-    }
-}
+                {isPercentageNan || 
+                    <StyledRewards>
+                        {this.props.addedItems.length } 
+                        <sup> activity(s) </sup>
+                        {this.props.total} <sup> rep(s) </sup> 
+                        {percentage}<sup>&#37; progress</sup>
+                    </StyledRewards>}
+            </StyledProgress>)}}      
 
-const mapStateToProps = (state : any) => {
+const mapStateToProps = (state : RootState) => {
+    const {addedItems, total, totalCompleted }  = state.plan;
     return {
-        addedItems: state.plan.addedItems,
-        total: state.plan.total,
-        totalCompleted: state.plan.totalCompleted
+        addedItems: addedItems,
+        total: total,
+        totalCompleted: totalCompleted
     }
 }
 

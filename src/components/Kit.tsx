@@ -1,19 +1,54 @@
 import React from "react";
+import styled from "styled-components";
 
+const KitContainer = styled.div`
+  margin-top: 12px;
+  padding: 8px 0;
+  border-top: 1px solid #eee;
+`;
 
-interface IKitProps {
-  items: { aparatus: string }[];
+const KitList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin:  0;
+  display: flex;
+  flex-wrap:wrap;
+  gap:8px;
+`;
+
+const KitItem = styled.li`
+  background: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+`;
+
+interface KitItemProps {
+  aparatus: string;
 }
 
-const Kit: React.FC<IKitProps> = ({ items }) => {
-  const kitList = items.map((item) => (
-    <span key={item.aparatus}>{item.aparatus}</span>
-  ));
+interface KitProps {
+  items: string | KitItemProps[]; // Accept both string & array
+}
+
+const Kit: React.FC<KitProps> = ({ items }) => {
+
+  const kitArray = typeof items === 'string'
+    ? items.split(',').map(item => ({ aparatus: item.trim() })) 
+    : items;
+
+  const validItems = kitArray.filter(item => item.aparatus && item.aparatus.trim() != '');
+
+  if (!validItems.length) return null;
+
   return (
-    <p>
-      <sup>*</sup>
-      <small>Optional</small> {kitList} <small>visit the store</small>
-    </p>
+    <KitContainer>
+      <KitList>
+        {validItems.map((item, index) => (
+          <KitItem key={index}>{item.aparatus}</KitItem>
+        ))}
+      </KitList> <small>*Purchase at the Store.</small>
+    </KitContainer>
   );
 };
 

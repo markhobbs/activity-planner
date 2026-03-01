@@ -15,45 +15,44 @@ const Card = styled.div`
   }
 `
 
-interface ICardActionsProps {
-  actionID?: any;
-  kit?: string;
-  addPlanItem: any
+interface CardActionsProps {
+  actionID: number;
+  addPlanItem: (id: number) => void;
   completed?: boolean;
+  kit?: string;
 }
 
-class CardActions extends Component<ICardActionsProps> {
+class CardActions extends Component<CardActionsProps> {
   handleAddPlan = (id: number) => { this.props.addPlanItem(id) }
   handlePurchase = (id: number) => { console.log('Send all kit items to store basket', id) }
   render () {
+    const { actionID, completed, kit } = this.props;
     return (
       <Card>
-        { this.props.completed ? 
-          <Button disabled variant="contained" color="primary" 
+        { completed ? <Button 
+            variant="contained" 
+            color="primary" 
+            disabled 
+            startIcon={<AddCircleOutlineIcon />} 
+            onClick={ () => { this.handleAddPlan(actionID)} }>
+            {completed ? "Completed": "Add Activity" }
+          </Button> : <Button variant="contained" color="primary" 
               startIcon={<AddCircleOutlineIcon />} 
               onClick={ () => {
-                  this.handleAddPlan(this.props.actionID)
+                  this.handleAddPlan(actionID)
               }}>
-              {this.props.completed ? "Completed": "Add" }
-          </Button> : 
-          <Button variant="contained" color="primary" 
-              startIcon={<AddCircleOutlineIcon />} 
-              onClick={ () => {
-                  this.handleAddPlan(this.props.actionID)
-              }}>
-              {this.props.completed ? "Completed": "Add" }
+              {completed ? "Completed": "Add Activity" }
           </Button>
         }
 
-        { !this.props.kit || 
-          <Link to="/store"
+        {!kit || <Link to="/store"
               className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary" 
               style = {{ backgroundColor: "white"}}>
               <ShoppingCartIcon 
                 onClick={ () => { 
-                  this.handlePurchase(this.props.actionID)
+                  this.handlePurchase(actionID)
                 }} 
-              /> *Kit
+              />*
           </Link>
         }
       </Card>

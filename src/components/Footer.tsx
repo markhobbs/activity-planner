@@ -1,15 +1,17 @@
 import React from 'react';
+import Context from './../Context';
 import styled from 'styled-components';
 
 
 const StyledFooter = styled.footer`
-    text-align: center;
+    text-align: left;
+    margin: 10px;
 `;
 
 const Footer: React.FC = () => {
     return (
         <StyledFooter>
-            &copy; { process.env.REACT_APP_TITLE } 2024
+            &copy; { Context.TITLE }
         </StyledFooter>
     )
 }

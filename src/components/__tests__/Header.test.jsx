@@ -1,7 +1,6 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import Heading from '../Heading';
-import '@testing-library/jest-dom/extend-expect';
+import { describe, it, expect } from 'vitest';
 
 describe('Heading component', () => {
     it('renders the heading correctly', () => {

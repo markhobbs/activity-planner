@@ -5,11 +5,26 @@ import DirectionsRun from '@mui/icons-material/DirectionsRun';
 import IconButton from '@mui/material/IconButton';
 
 
-interface IBasketProps {
-    items: number;
+interface BasketProps {
+    plan?: Plan;
+}
+interface Plan {
+    addedItems: (id: number) => void;
+}
+interface PlanItem {
+  id: number;
+  title: string;
+  rep: number;
+  quantity: number;
+  completed: boolean;
+}
+interface RootState {
+  plan : {
+    addedItems: PlanItem[];
+  }
 }
 
-class Basket extends Component<IBasketProps>{
+class Basket extends Component<BasketProps>{
     render() { 
         return(  
             <IconButton 
@@ -24,26 +39,18 @@ class Basket extends Component<IBasketProps>{
     }
 }
 
-const mapStateToProps = (state: any) => {
-    return {
-        items: state.plan.addedItems,
-    } 
-}
+const mapStateToProps = (state: RootState) => {
+  return {
+    items: state.plan.addedItems
+  };
+};
 
-const mapDispatchToProps = (dispatch: any)=>{
+const mapDispatchToProps = (dispatch: (arg0: { type: string; id: number; }) => void)=>{
     return {
-        removePlanItem: (id : number) => {
-            dispatch(removePlanItem(id))
-        },
-        completePlanItem: (id : number) => {
-            dispatch(completePlanItem(id))
-        },
-        addPlanQuantity: (id : number) => {
-            dispatch(addPlanQuantity(id))
-        },
-        subtractPlanQuantity: (id : number) => {
-            dispatch(subtractPlanQuantity(id))
-        }
+        removePlanItem: (id: number) => dispatch(removePlanItem(id)),
+        completePlanItem: (id: number) => dispatch(completePlanItem(id)),
+        addPlanQuantity: (id: number) => dispatch(addPlanQuantity(id)),
+        subtractPlanQuantity: (id: number) => dispatch(subtractPlanQuantity(id))
     }
 }
 

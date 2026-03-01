@@ -1,22 +1,19 @@
 import React, { useEffect } from 'react';
 import Heading from '../components/Heading';
-import LinkList from '../components/LinkList';
 import Score from '../components/Score';
+import Context from './../Context';
 import { MainContainer } from '../styles';
 
 
 const Awards: React.FC = () => {
-    const awards_heading = String(process.env.REACT_APP_AWARDS_HEADING);
-    const awards_description = String(process.env.REACT_APP_AWARDS_SUMMARY);
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
     return (
         <MainContainer>
-            <Heading heading={ awards_heading } />
-            <p>{ awards_description }</p>
+            <Heading heading={ Context.AWARDS_HEADING } />
+            <p>{ Context.AWARDS_SUMMARY }</p>
             <Score />
-            <LinkList />
         </MainContainer>
     )
 }

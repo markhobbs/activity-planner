@@ -19,36 +19,55 @@ const CardItem = styled.li`
 const CardItemContent = styled.div`
   padding: 0 24px;
   h3 {
-    margin-top: 0;
+    margin-top: 24px;
     font-size: 2em;
   }
 `
 
-interface ICardProps {
-  item: any;
+interface CardProps {
+  item: Item;
+}
+interface Item {
+  completed: boolean;
+  featured: string;
+  headline:  string;
+  id: number;
+  img: string;
+  kit: string;
+  rep: string;
+  rewards: Reward[];
+  title:  string;
 }
 
-class Card extends Component<ICardProps> {
+interface Reward {
+  0: string;
+  1: number;
+}
+
+class Card extends Component<CardProps> {
   render () {
-    const { completed, featured, headline, id, img, kit, rep, rewards, title } = this.props.item
+    const {completed, featured, headline, id, img, kit, rep, rewards, title} = this.props.item;
     return (
-      <CardItem key={ id }>               
+      <CardItem key={id}>               
         <Image 
-          src = { img } 
-          alt = { title } />
-        <Actions
-          actionID = { id } 
-          kit = { kit }
-          completed = { completed } />
+          src={img} 
+          alt={title} />
+        
         <CardItemContent>
-          <h3>{ title } <small>{ rep } <sup>rep(s)</sup></small></h3>
-          <p>{ headline }</p> 
-          { !kit || <Kit items={kit } /> }
+          <h3>
+            {title} <small>{rep} <sup>rep(s)</sup></small>
+          </h3>
+          <p>{headline}</p> 
+          {!kit || <Kit items={kit} />}
+          {!rewards || <Rewards items={rewards} />}
         </CardItemContent>
-        { !featured || <Badge>
-            <Stars style={{ color: "#a17f1a" }} />
-          </Badge> }
-        { !rewards || <Rewards items={ rewards } /> }
+       
+        {!featured || <Badge><Stars style={{color: "#a17f1a"}} /></Badge>}
+        
+        <Actions
+          actionID={id} 
+          kit={kit}
+          completed={completed} />
     </CardItem>);
     }
 }

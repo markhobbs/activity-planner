@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Card from '../components/Card';
-import Heading from '../components/Heading';
 import styled from 'styled-components';
 import { MainContainer } from '../styles';
-
 
 const StyledActivityList = styled.ul`
     @media (min-width: 600px) {
@@ -26,31 +24,35 @@ const StyledActivityList = styled.ul`
         }
     }
 `
-
-interface IActivityProps {
-    ikey: number;
+interface ActivityProps {
+    index?: number;
     items: string[];
 }
+interface RootState {
+  plan : {
+    items: string[];
+  }
+}
 
-class Activity extends Component<IActivityProps>  {
+class Activity extends Component<ActivityProps>  {
     render() {
-        const str_activities_heading = String(process.env.REACT_APP_ACTIVATIES_HEADING);
-        let cardItems = this.props.items.map( (item, ikey)  => {
-            return (<Card key={ikey} item={item} />)
+        const cards = this.props.items.map((item: any, index: number) => {
+            return (<Card key={index} item={item} />)
         });
         return(
             <MainContainer>
-                <Heading heading={ str_activities_heading } />
-                <StyledActivityList>{ cardItems }</StyledActivityList>
+                <StyledActivityList>
+                    { cards }
+                </StyledActivityList>
             </MainContainer>
         );
     }
 }
 
-const mapStateToProps = (state: any) => {
-    return {
-      items: state.plan.items,
-    }
-}
+const mapStateToProps = (state: RootState) => {
+  return {
+    items: state.plan.items,
+  };
+};
 
 export default connect(mapStateToProps)(Activity);

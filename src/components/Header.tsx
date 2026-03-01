@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Basket from  './Basket';
 import Menu from '../components/Menu';
 import Opacity from '@mui/icons-material/Opacity';
+import Context from './../Context';
 import styled from 'styled-components';
 
 
@@ -20,7 +21,7 @@ const Header: React.FC = () => {
       <Logo>
         <Link to="/" className="logo">
           <Opacity />
-          {process.env.REACT_APP_TITLE}
+          { Context.TITLE }
         </Link>
         <Link to="/planner" className="right">
           <Basket />

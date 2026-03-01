@@ -44,12 +44,12 @@ const StyledMenu = styled.div<{ open: boolean }>`
   }
 `
 
-interface IMenuItemsProps {
+interface MenuItemsProps {
   open: boolean;
   setOpen: (open: boolean) => void;
 }
 
-const MenuItems: React.FC<IMenuItemsProps> = ({ open, setOpen }) => {
+const MenuItems: React.FC<MenuItemsProps> = ({ open, setOpen }) => {
   return (
     <StyledMenu
       data-testid="menu-items"
@@ -59,7 +59,6 @@ const MenuItems: React.FC<IMenuItemsProps> = ({ open, setOpen }) => {
       <Link to="/planner">Planner</Link>
       <Link to="/awards">Awards</Link>
       <Link to="/about"><small>About</small></Link>
-      {/* <Link to="/paginated"><small>Paginated</small></Link> */}
     </StyledMenu>
   );
 };

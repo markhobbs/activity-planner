@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 
-
-interface IPaginationProps<T> {
+interface PaginationProps<T> {
     data: T[];
     RenderComponent: React.FC<{ data: T }>;
     title?: string;
@@ -9,49 +8,68 @@ interface IPaginationProps<T> {
     dataLimit: number;
 }
 
-const Pagination = <T extends unknown>({
+const Pagination = <T,>({
     data,
     RenderComponent,
-    title,
     pageLimit,
     dataLimit
-}: IPaginationProps<T>) => {
-
-    const [pages] = useState(Math.round(data.length / dataLimit));
+}: PaginationProps<T>) => {
     const [currentPage, setCurrentPage] = useState(1);
 
+    // Calculate total pages using useMemo for performance
+    const pages = useMemo(() => {
+        return Math.ceil(data.length / dataLimit);
+    }, [data.length, dataLimit]);
+
     const goToNextPage = () => {
-        setCurrentPage((page) => page + 1);
+        setCurrentPage((page) => Math.min(page + 1, pages));
     };
 
     const goToPreviousPage = () => {
-        setCurrentPage((page) => page - 1);
+        setCurrentPage((page) => Math.max(page - 1, 1));
     };
 
     const changePage = (event: React.MouseEvent<HTMLButtonElement>) => {
         const pageNumber = Number(event.currentTarget.textContent);
-        setCurrentPage(pageNumber);
+        if (!isNaN(pageNumber) && pageNumber >= 1 && pageNumber <= pages) {
+            setCurrentPage(pageNumber);
+        }
     };
 
     const getPaginatedData = (): T[] => {
-        const startIndex = currentPage * dataLimit - dataLimit;
+        const startIndex = (currentPage - 1) * dataLimit;
         const endIndex = startIndex + dataLimit;
         return data.slice(startIndex, endIndex);
     };
 
     const getPaginationGroup = (): number[] => {
-        const start = Math.floor((currentPage - 1) / pageLimit) * pageLimit;
-        return new Array(pageLimit).fill(0).map((_, idx) => start + idx + 1);
+        const start = Math.ceil((currentPage - 1) / pageLimit) * pageLimit;
+        const group = [];
+        for (let i = 1; i <= pageLimit; i++) {
+            const pageNum = start + i;
+            if (pageNum <= pages) {
+                group.push(pageNum);
+            }
+        }
+        return group;
     };
+
+    // Handle edge case where data is empty
+    if (data.length === 0) {
+        return <div>No data available</div>;
+    }
 
     return (
         <>
             <div className="pagination">
                 <button
                     onClick={goToPreviousPage}
-                    className={`prev ${currentPage === 1 ? "disabled" : ""}`}>
+                    className={`prev ${currentPage === 1 ? "disabled" : ""}`}
+                    disabled={currentPage === 1}
+                >
                     prev
                 </button>
+                
                 {getPaginationGroup().map((item) => (
                     <button
                         key={item}
@@ -59,13 +77,16 @@ const Pagination = <T extends unknown>({
                         className={`paginationItem ${
                             currentPage === item ? "active" : ""
                         }`}
-                        >
-                        <span>{ item }</span>
+                        disabled={currentPage === item}
+                    >
+                        <span>{item}</span>
                     </button>
                 ))}
+                
                 <button
                     onClick={goToNextPage}
                     className={`next ${currentPage === pages ? "disabled" : ""}`}
+                    disabled={currentPage === pages}
                 >
                     next
                 </button>

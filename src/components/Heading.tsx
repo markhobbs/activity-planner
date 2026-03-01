@@ -7,11 +7,11 @@ const StyledHeading = styled.h2`
     margin: 12px 0;
 `;
 
-interface IPageHeaderProps {
+interface HeadingProps {
     heading: string;
 }
 
-const Heading: React.FC<IPageHeaderProps> = ({ heading }) => {
+const Heading: React.FC<HeadingProps> = ({ heading }) => {
     return (
         <StyledHeading>{ heading }</StyledHeading>
     );

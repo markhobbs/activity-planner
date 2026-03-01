@@ -1,5 +1,5 @@
 # Basic Fitness Manager Application Built with React & Redux
-This simple application demonstrates how to use React and Redux to create an interactive UI for planning activities.
+This simple application demonstrates React and Redux to create an interactive UI for planning activities.
 
 ## Features
 * Add and remove activities
@@ -10,6 +10,11 @@ This simple application demonstrates how to use React and Redux to create an int
 To start and build the application, follow these steps:
 ```
 npm install
-npm run start
+npm run dev
 npm run build
+npm run preview
+
+
+npx playwright install
+npm run test
 ```
