@@ -16,5 +16,9 @@ npm run preview
 
 
 npx playwright install
+npx vitest --browser
 npm run test
+
 ```
+
+Tested MAC, WIN, Linux: Node v24.13.0, npm v11.6.2
